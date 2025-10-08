@@ -6,21 +6,23 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/06 15:36:56 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/08 19:07:52 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-void findContact(PhoneBook phonebook)
+void findContact(PhoneBook &phonebook)
 {
-	//display saved contacts
-	//prompt user for index of entry
-	//display contact information (or issue warning)
-	(void)phonebook;
+	int	index;
+
+	if (phonebook.displayAll())
+		return;
+	index = promptIndex();
+	phonebook.displayContact(index);
 }
 
-void saveNewContact(PhoneBook phonebook)
+void saveNewContact(PhoneBook &phonebook)
 {
 	std::string name;
 	std::string surname;
@@ -36,9 +38,14 @@ void saveNewContact(PhoneBook phonebook)
 
 void displayOptions()
 {
-	std::cout << '\n' << "**************************" << '\n';
-	std::cout << "           MENU           " << '\n';
-	std::cout << "**************************" << '\n';
+	std::string title = "MENU";
+	int width = 28;
+	int padding = (width - title.length()) / 2;
+
+	std::cout << std::setfill('*') << std::setw(width) << "" << '\n';
+	std::cout << std::setfill(' ') << std::setw(padding) << "" << title << '\n';
+	std::cout << std::setfill('*') << std::setw(width) << "" << '\n';
+
 	std::cout << "* ADD: save new contact" << '\n';
 	std::cout << "* SEARCH: display contact" << '\n';
 	std::cout << "* EXIT: quit program" << "\n\n";
@@ -49,16 +56,19 @@ int main()
 	PhoneBook	phonebook;
 	std::string	input;
 
+	displayOptions();
 	while (1)
 	{
-		displayOptions();
 		input = promptOption();
 		if (input == "ADD")
 			saveNewContact(phonebook);
 		else if (input == "SEARCH")
 			findContact(phonebook);
-		else
+		else if (input == "EXIT")
 			break;
+		else
+			std::cout << "Invalid option." << '\n';
+		std::cout << std::endl;
 	}
 	return 0;
 }

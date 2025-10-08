@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:25 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/06 15:36:52 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/08 19:28:55 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,20 @@ std::string promptInfo(std::string description)
 	std::string	input;
 
 	std::cout << "Enter " << description << ": ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	return (input);
+}
+
+int	promptIndex()
+{
+	std::string input;
+	std::stringstream numericString;
+	int index;
+
+	input = promptInfo("index");
+	numericString.str(input);
+	numericString >> index;
+	return (index);
 }
 
 void promptContactInfo(std::string &name, std::string &surname,
@@ -40,10 +52,7 @@ std::string promptOption()
 {
 	std::string	input;
 
-	while (input != "ADD" && input != "SEARCH" && input != "EXIT")
-	{
-		input = "";
+	while (input == "")
 		input = promptInfo("option");
-	}
 	return input;
 }

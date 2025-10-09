@@ -6,13 +6,13 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:25 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/09 14:52:38 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/09 15:17:44 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-bool promptInfo(std::string description, std::string &input)
+bool promptInfo(const std::string description, std::string &input)
 {
 
 	std::cout << "Enter " << description << ": ";

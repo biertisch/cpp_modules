@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/09 15:02:38 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/09 15:18:27 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool saveNewContact(PhoneBook &phonebook)
 
 void displayOptions()
 {
-	std::string title = "MENU";
+	const std::string title = "MENU";
 	int width = 28;
 	int padding = (width - title.length()) / 2;
 

@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:37 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/09 15:03:16 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:06:25 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ bool PhoneBook::displayAll()
 		return false;
 	}
 
-	std::string title = "CONTACTS";
+	const std::string title = "CONTACTS";
 	int padding = (65 - title.length()) / 2;
 	std::cout << '\n' << std::setfill(' ') << std::setw(padding) << title << '\n';
 

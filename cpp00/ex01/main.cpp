@@ -6,23 +6,25 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/08 19:07:52 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/09 15:02:38 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-void findContact(PhoneBook &phonebook)
+bool findContact(PhoneBook &phonebook)
 {
 	int	index;
 
-	if (phonebook.displayAll())
-		return;
-	index = promptIndex();
+	if (!phonebook.displayAll())
+		return true;
+	if (!promptIndex(index))
+			return false;
 	phonebook.displayContact(index);
+	return true;
 }
 
-void saveNewContact(PhoneBook &phonebook)
+bool saveNewContact(PhoneBook &phonebook)
 {
 	std::string name;
 	std::string surname;
@@ -31,9 +33,11 @@ void saveNewContact(PhoneBook &phonebook)
 	std::string secret;
 	Contact		newContact;
 
-	promptContactInfo(name, surname, nickname, number, secret);
+	if (!promptContactInfo(name, surname, nickname, number, secret))
+		return false;
 	newContact = Contact(name, surname, nickname, number, secret);
 	phonebook.addContact(newContact);
+	return true;
 }
 
 void displayOptions()
@@ -46,9 +50,9 @@ void displayOptions()
 	std::cout << std::setfill(' ') << std::setw(padding) << "" << title << '\n';
 	std::cout << std::setfill('*') << std::setw(width) << "" << '\n';
 
-	std::cout << "* ADD: save new contact" << '\n';
-	std::cout << "* SEARCH: display contact" << '\n';
-	std::cout << "* EXIT: quit program" << "\n\n";
+	std::cout << "ADD: save new contact" << '\n';
+	std::cout << "SEARCH: display contact" << '\n';
+	std::cout << "EXIT: quit program" << "\n\n";
 }
 
 int main()
@@ -59,16 +63,18 @@ int main()
 	displayOptions();
 	while (1)
 	{
-		input = promptOption();
-		if (input == "ADD")
-			saveNewContact(phonebook);
-		else if (input == "SEARCH")
-			findContact(phonebook);
+		if (!promptOption(input))
+			break;
+		if (input == "ADD" && !saveNewContact(phonebook))
+			break;
+		else if (input == "SEARCH" && !findContact(phonebook))
+			break;
 		else if (input == "EXIT")
 			break;
-		else
+		else if (input != "ADD" && input != "SEARCH" && input != "EXIT")
 			std::cout << "Invalid option." << '\n';
-		std::cout << std::endl;
+		std::cout << '\n';
+		input = "";
 	}
 	return 0;
 }

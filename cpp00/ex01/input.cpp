@@ -6,53 +6,65 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:25 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/08 19:28:55 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/09 14:52:38 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-std::string promptInfo(std::string description)
+bool promptInfo(std::string description, std::string &input)
 {
-	std::string	input;
 
 	std::cout << "Enter " << description << ": ";
-	std::getline(std::cin, input);
-	return (input);
+	if (!std::getline(std::cin, input))
+	{
+		if (std::cin.eof())
+			std::cout << "EOF detected. Exiting...\n";
+		else
+			std::cerr << "Error reading input.\n";
+		std::cin.clear();
+		return false;
+	}
+	return true;
 }
 
-int	promptIndex()
+bool	promptIndex(int &index)
 {
 	std::string input;
 	std::stringstream numericString;
-	int index;
 
-	input = promptInfo("index");
+	if (!promptInfo("index", input))
+		return false;
 	numericString.str(input);
 	numericString >> index;
-	return (index);
+	return true;
 }
 
-void promptContactInfo(std::string &name, std::string &surname,
+bool promptContactInfo(std::string &name, std::string &surname,
 	std::string &nickname, std::string &number, std::string &secret)
 {
-	while (name == "")
-		name = promptInfo("first name");
-	while (surname == "")
-		surname = promptInfo("last name");
-	while (nickname == "")
-		nickname = promptInfo("nickname");
-	while (number == "")
-		number = promptInfo("phone number");
-	while (secret == "")
-		secret = promptInfo("darkest secret");
+	while (name.empty())
+		if (!promptInfo("first name", name))
+			return false;
+	while (surname.empty())
+		if (!promptInfo("last name", surname))
+			return false;
+	while (nickname.empty())
+		if (!promptInfo("nickname", nickname))
+			return false;
+	while (number.empty())
+		if (!promptInfo("phone number", number))
+			return false;
+	while (secret.empty())
+		if (!promptInfo("darkest secret", secret))
+			return false;
+	return true;
 }
 
-std::string promptOption()
+bool promptOption(std::string &input)
 {
-	std::string	input;
-
-	while (input == "")
-		input = promptInfo("option");
-	return input;
+	while (input.empty())
+		if (!promptInfo("option", input))
+			return false;
+	return true;
 }

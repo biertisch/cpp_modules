@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   brainz.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 15:34:39 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/10 11:51:58 by beatde-a         ###   ########.fr       */
+/*   Created: 2025/10/10 12:38:48 by beatde-a          #+#    #+#             */
+/*   Updated: 2025/10/10 12:40:10 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+#ifndef BRAINZ_H
+#define BRAINZ_H
 
-#include "Contact.hpp"
-#include <string>
+#include "Zombie.hpp"
 #include <iostream>
-#include <iomanip>
 
-#define MAX_SIZE 8
-
-class PhoneBook
-{
-	private:
-		Contact		contacts[MAX_SIZE];
-		int			nextIndex;
-		int			validContacts;
-
-		std::string	formatField(const std::string &str);
-
-	public:
-		PhoneBook();
-		void		addContact(Contact newContact);
-		bool		displayAll();
-		bool		displayContact(int index);
-};
+void	randomChump(std::string name);
+Zombie*	newZombie(std::string name);
 
 #endif

@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:10:04 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/09 17:58:37 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/10 11:52:12 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
-#include <iomanip>
 #include <ctime>
 
 int	Account::_nbAccounts = 0;

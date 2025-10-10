@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 15:34:39 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/10 11:51:58 by beatde-a         ###   ########.fr       */
+/*   Created: 2025/10/10 11:49:26 by beatde-a          #+#    #+#             */
+/*   Updated: 2025/10/10 16:35:43 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-#include "Contact.hpp"
-#include <string>
 #include <iostream>
-#include <iomanip>
+#include <string>
 
-#define MAX_SIZE 8
-
-class PhoneBook
+class Zombie
 {
 	private:
-		Contact		contacts[MAX_SIZE];
-		int			nextIndex;
-		int			validContacts;
-
-		std::string	formatField(const std::string &str);
+		std::string	name;
 
 	public:
-		PhoneBook();
-		void		addContact(Contact newContact);
-		bool		displayAll();
-		bool		displayContact(int index);
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+		void announce();
+		void setName(std::string name);
 };
 
 #endif

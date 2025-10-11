@@ -27,7 +27,7 @@ $(SENTINEL):
 
 clean:
 	@echo "Removing object file..."
-	@$(RM) .compiled $(OBJ)
+	@$(RM) $(SENTINEL) $(OBJ)
 
 fclean: clean
 	@echo "Removing executable..."

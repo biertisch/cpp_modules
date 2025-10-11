@@ -1,26 +1,30 @@
 NAME		=	bank
 
 SRC			=	tests.cpp Account.cpp
-OBJ         =	$(patsubst %.cpp, %.o, $(SRC))
 
-HDR			=	Account.hpp
+OBJ_DIR		=	obj/
+OBJ         =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
+DEP			=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
 
 C++			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98
 RM			=	rm -rf
 
-SENTINEL	=	.compiled
+SENTINEL	=	$(OBJ_DIR).compiled
 LOGFILE		=	bank.log
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HDR)
+$(NAME): $(OBJ)
 	@echo "Linking executable..."
 	@$(C++) $(OBJ) -o $@
 	@echo "$(NAME) built!"
 
-%.o: %.cpp
+$(OBJ_DIR)%.o: %.cpp | $(OBJ_DIR)
 	@$(C++) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 $(OBJ): $(SENTINEL)
 
@@ -30,7 +34,7 @@ $(SENTINEL):
 
 clean:
 	@echo "Removing object files..."
-	@$(RM) .compiled $(OBJ)
+	@$(RM) $(OBJ_DIR)
 
 fclean: clean
 	@echo "Removing executable and log file..."

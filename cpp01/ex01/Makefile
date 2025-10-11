@@ -1,15 +1,16 @@
 NAME		=	moarBrainz
 
 SRC			=	main.cpp Zombie.cpp zombieHorde.cpp
-OBJ         =	$(patsubst %.cpp, %.o, $(SRC))
 
-HDR			=	Zombie.hpp moarBrainz.hpp
+OBJ_DIR		=	obj/
+OBJ         =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
+DEP			=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
 
 C++			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98
 RM			=	rm -rf
 
-SENTINEL	=	.compiled
+SENTINEL	=	$(OBJ_DIR).compiled
 
 all: $(NAME)
 
@@ -18,8 +19,11 @@ $(NAME): $(OBJ) $(HDR)
 	@$(C++) $(OBJ) -o $@
 	@echo "$(NAME) built!"
 
-%.o: %.cpp
+$(OBJ_DIR)%.o: %.cpp | $(OBJ_DIR)
 	@$(C++) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 $(OBJ): $(SENTINEL)
 
@@ -29,7 +33,7 @@ $(SENTINEL):
 
 clean:
 	@echo "Removing object files..."
-	@$(RM) .compiled $(OBJ)
+	@$(RM) $(OBJ_DIR)
 
 fclean: clean
 	@echo "Removing executable..."

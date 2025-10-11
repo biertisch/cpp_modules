@@ -6,20 +6,20 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:37 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/09 18:06:25 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/11 09:43:40 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : nextIndex(0), validContacts(0) {}
+PhoneBook::PhoneBook() : nextIndex_(0), validContacts_(0) {}
 
 void PhoneBook::addContact(Contact newContact)
 {
-	contacts[nextIndex] = newContact;
-	nextIndex = (nextIndex + 1) % MAX_SIZE;
-	if (validContacts < MAX_SIZE)
-		validContacts++;
+	contacts_[nextIndex_] = newContact;
+	nextIndex_ = (nextIndex_ + 1) % MAX_SIZE;
+	if (validContacts_ < MAX_SIZE)
+		validContacts_++;
 }
 
 std::string	PhoneBook::formatField(const std::string &str)
@@ -31,7 +31,7 @@ std::string	PhoneBook::formatField(const std::string &str)
 
 bool PhoneBook::displayAll()
 {
-	if (!validContacts)
+	if (!validContacts_)
 	{
 		std::cout << "No contacts." << '\n';
 		return false;
@@ -42,12 +42,12 @@ bool PhoneBook::displayAll()
 	std::cout << '\n' << std::setfill(' ') << std::setw(padding) << title << '\n';
 
 	std::cout << std::right;
-	for (int i = 1; i <= validContacts; i++)
+	for (int i = 1; i <= validContacts_; i++)
 	{
 		std::cout << std::setfill(' ') << std::setw(10) << i << " | "
-			<< std::setw(10) << PhoneBook::formatField(contacts[i - 1].getFirstName()) << " | "
-			<< std::setw(10) << PhoneBook::formatField(contacts[i - 1].getLastName()) << " | "
-			<< std::setw(10) << PhoneBook::formatField(contacts[i - 1].getNickname()) << '\n';
+			<< std::setw(10) << PhoneBook::formatField(contacts_[i - 1].getFirstName()) << " | "
+			<< std::setw(10) << PhoneBook::formatField(contacts_[i - 1].getLastName()) << " | "
+			<< std::setw(10) << PhoneBook::formatField(contacts_[i - 1].getNickname()) << '\n';
 	}
 
 	std::cout << '\n';
@@ -56,16 +56,16 @@ bool PhoneBook::displayAll()
 
 bool PhoneBook::displayContact(int index)
 {
-	if (index < 1 || index > validContacts)
+	if (index < 1 || index > validContacts_)
 	{
 		std::cout << "Invalid index." << '\n';
 		return false;
 	}
 	std::cout << "\nCONTACT INFO\n";
-	std::cout << "First Name: " << contacts[index - 1].getFirstName() << '\n';
-	std::cout << "Last Name: " << contacts[index - 1].getLastName() << '\n';
-	std::cout << "Nickname: " << contacts[index - 1].getNickname() << '\n';
-	std::cout << "Phone Number: " << contacts[index - 1].getPhoneNumber() << '\n';
-	std::cout << "Darkest Secret: " << contacts[index - 1].getDarkestSecret() << '\n';
+	std::cout << "First Name: " << contacts_[index - 1].getFirstName() << '\n';
+	std::cout << "Last Name: " << contacts_[index - 1].getLastName() << '\n';
+	std::cout << "Nickname: " << contacts_[index - 1].getNickname() << '\n';
+	std::cout << "Phone Number: " << contacts_[index - 1].getPhoneNumber() << '\n';
+	std::cout << "Darkest Secret: " << contacts_[index - 1].getDarkestSecret() << '\n';
 	return true;
 }

@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/09 15:18:27 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/11 09:44:37 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ bool saveNewContact(PhoneBook &phonebook)
 	std::string nickname;
 	std::string number;
 	std::string secret;
-	Contact		newContact;
 
 	if (!promptContactInfo(name, surname, nickname, number, secret))
 		return false;
-	newContact = Contact(name, surname, nickname, number, secret);
+
+	Contact	newContact = Contact(name, surname, nickname, number, secret);
 	phonebook.addContact(newContact);
 	return true;
 }

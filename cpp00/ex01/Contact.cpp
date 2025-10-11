@@ -6,41 +6,41 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:19 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/06 15:34:20 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/11 09:40:40 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact() : firstName(""), lastName(""), nickname(""), phoneNumber(""),
-	darkestSecret("") {}
+Contact::Contact() : firstName_(""), lastName_(""), nickname_(""),
+	phoneNumber_(""), darkestSecret_("") {}
 
 Contact::Contact(std::string name, std::string surname, std::string nickname,
-	std::string number, std::string secret) : firstName(name),
-	lastName(surname), nickname(nickname), phoneNumber(number),
-	darkestSecret(secret) {}
+	std::string number, std::string secret) : firstName_(name),
+	lastName_(surname), nickname_(nickname), phoneNumber_(number),
+	darkestSecret_(secret) {}
 
 std::string Contact::getFirstName()
 {
-	return firstName;
+	return firstName_;
 }
 
 std::string Contact::getLastName()
 {
-	return lastName;
+	return lastName_;
 }
 
 std::string Contact::getNickname()
 {
-	return nickname;
+	return nickname_;
 }
 
 std::string Contact::getPhoneNumber()
 {
-	return phoneNumber;
+	return phoneNumber_;
 }
 
 std::string Contact::getDarkestSecret()
 {
-	return darkestSecret;
+	return darkestSecret_;
 }

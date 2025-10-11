@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 11:57:00 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 09:49:26 by beatde-a         ###   ########.fr       */
+/*   Created: 2025/10/11 10:12:50 by beatde-a          #+#    #+#             */
+/*   Updated: 2025/10/11 10:41:05 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie() : name_("default") {}
+HumanB::HumanB(std::string name) : name_(name), weapon_(NULL) {}
 
-Zombie::Zombie(std::string name) : name_(name)
+HumanB::HumanB(std::string name, Weapon& weapon) : name_(name), weapon_(&weapon) {}
+
+void	HumanB::setWeapon(Weapon& weapon)
 {
-	std::cout << "Zombie " << name_ << " created!\n";
+	weapon_ = &weapon;
 }
 
-Zombie::~Zombie()
+void	HumanB::attack()
 {
-	std::cout << "Zombie " << name_ << " destroyed!\n";
-}
-
-void Zombie::announce()
-{
-	std::cout << name_ << ": BraiiiiiiinnnzzzZ...\n";
-}
-
-void Zombie::setName(std::string name)
-{
-	name_ = name;
+	std::cout << name_ << " attacks with their " << weapon_->getType() << '\n';
 }

@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 15:34:39 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 09:41:08 by beatde-a         ###   ########.fr       */
+/*   Created: 2025/10/11 10:17:32 by beatde-a          #+#    #+#             */
+/*   Updated: 2025/10/11 10:34:03 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-#define PHONEBOOK_H
-
-#include "Contact.hpp"
-#include <string>
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include <iostream>
-#include <iomanip>
 
-#define MAX_SIZE 8
-
-class PhoneBook
+int main()
 {
-	private:
-		Contact		contacts_[MAX_SIZE];
-		int			nextIndex_;
-		int			validContacts_;
-
-		std::string	formatField(const std::string &str);
-
-	public:
-		PhoneBook();
-		void		addContact(Contact newContact);
-		bool		displayAll();
-		bool		displayContact(int index);
-};
-
-#endif
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
+}

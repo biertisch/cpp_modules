@@ -6,13 +6,19 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:37:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 18:32:11 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/11 18:42:51 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl() {}
+Harl::Harl()
+{
+	levels_[0] = "DEBUG";
+	levels_[1] = "INFO";
+	levels_[2] = "WARNING";
+	levels_[3] = "ERROR";
+}
 
 void Harl::debug()
 {
@@ -43,16 +49,20 @@ void Harl::error()
 
 void Harl::complain(std::string level)
 {
-	std::string levels[N] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void (Harl::*functions[N])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	for (int i = 0; i < N; i++)
 	{
-		if (level == levels[i])
+		if (level == levels_[i])
 		{
 			(this->*functions[i])();
 			return;
 		}
 	}
 	std::cout << "[ Probably complaining about insignificant problems ]\n";
+}
+
+std::string* Harl::getLevels()
+{
+	return levels_;
 }

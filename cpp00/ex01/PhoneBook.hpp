@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:39 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 09:41:08 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 12:14:21 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class PhoneBook
 
 	public:
 		PhoneBook();
+		~PhoneBook();
 		void		addContact(Contact newContact);
 		bool		displayAll();
 		bool		displayContact(int index);

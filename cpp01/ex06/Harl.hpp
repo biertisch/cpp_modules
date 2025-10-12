@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:35:02 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 10:02:47 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 12:17:44 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class	Harl
 
 	public:
 		Harl();
+		~Harl();
 		void		complain(std::string level);
 		void		filter(const std::string& level);
 };

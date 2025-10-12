@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 09:54:05 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 10:24:57 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 12:16:35 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Weapon
 	public:
 		Weapon();
 		Weapon(std::string type);
+		~Weapon();
 		std::string	getType();
 		void		setType(std::string newType);
 };

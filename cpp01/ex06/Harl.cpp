@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:37:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 10:08:36 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 12:17:57 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Harl::Harl()
 	levels_[2] = "WARNING";
 	levels_[3] = "ERROR";
 }
+
+Harl::~Harl() {}
 
 void Harl::debug()
 {

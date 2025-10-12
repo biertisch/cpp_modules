@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 09:58:45 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 10:02:44 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 12:16:46 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 Weapon::Weapon() : type_("") {}
 
 Weapon::Weapon(std::string type) : type_(type) {}
+
+Weapon::~Weapon() {}
 
 std::string	Weapon::getType()
 {

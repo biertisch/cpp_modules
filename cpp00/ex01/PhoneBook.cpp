@@ -6,13 +6,15 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:37 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 09:43:40 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 12:14:37 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : nextIndex_(0), validContacts_(0) {}
+
+PhoneBook::~PhoneBook() {}
 
 void PhoneBook::addContact(Contact newContact)
 {

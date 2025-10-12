@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:22 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 09:39:33 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 12:13:51 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Contact
 		Contact();
 		Contact(std::string name, std::string surname, std::string nickname,
 			std::string number, std::string secret);
+		~Contact();
 		std::string	getFirstName();
 		std::string	getLastName();
 		std::string	getNickname();

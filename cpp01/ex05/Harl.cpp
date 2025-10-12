@@ -6,13 +6,15 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:37:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 09:51:00 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 12:17:31 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 Harl::Harl() {}
+
+Harl::~Harl() {}
 
 void Harl::debug()
 {

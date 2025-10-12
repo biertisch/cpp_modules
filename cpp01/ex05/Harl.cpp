@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:37:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 18:32:11 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 09:51:00 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ void Harl::complain(std::string level)
 			return;
 		}
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]\n";
+	std::cout << "[ Harl is feeding their ulcer, mumbling indiscernible complaints ]\n";
 }

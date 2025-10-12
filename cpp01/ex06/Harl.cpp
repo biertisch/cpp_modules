@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:37:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 18:42:51 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/12 10:08:36 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ void Harl::error()
 	std::cout << "This is unacceptable! I want to speak to the manager now.\n";
 }
 
+int Harl::getLevelIndex(const std::string& level)
+{
+	for (int i = 0; i < N; i++)
+		if (level == levels_[i])
+			return i;
+	return -1;
+}
+
 void Harl::complain(std::string level)
 {
 	void (Harl::*functions[N])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
@@ -59,10 +67,29 @@ void Harl::complain(std::string level)
 			return;
 		}
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]\n";
+
+	std::cout << "[ Harl is feeding their ulcer, mumbling indiscernible complaints ]\n";
 }
 
-std::string* Harl::getLevels()
+void Harl::filter(const std::string& level)
 {
-	return levels_;
+	int	 index = getLevelIndex(level);
+	switch(index)
+	{
+		case 0:
+			debug();
+			std::cout << '\n';
+		case 1:
+			info();
+			std::cout << '\n';
+		case 2:
+			warning();
+			std::cout << '\n';
+		case 3:
+			error();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
+			break;
+	}
 }

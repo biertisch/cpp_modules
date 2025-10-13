@@ -1,6 +1,6 @@
-NAME		=	bank
+NAME		=	fixed
 
-SRC			=	tests.cpp Account.cpp
+SRC			=	main.cpp Fixed.cpp
 
 OBJ_DIR		=	obj/
 OBJ         =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
@@ -11,11 +11,11 @@ CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98
 RM			=	rm -rf
 
 SENTINEL	=	$(OBJ_DIR).compiled
-LOGFILE		=	bank.log
+OUTFILE		= 	output.txt
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HDR)
 	@echo "Linking executable..."
 	@$(C++) $(OBJ) -o $@
 	@echo "$(NAME) built!"
@@ -37,17 +37,14 @@ clean:
 	@$(RM) $(OBJ_DIR)
 
 fclean: clean
-	@echo "Removing executable and log file..."
-	@$(RM) $(NAME) $(LOGFILE)
+	@echo "Removing executable..."
+	@$(RM) $(NAME) $(OUTFILE)
 
 re: fclean all
 
 test: $(NAME)
-	@./$(NAME) > $(LOGFILE)
-	@sed 's/^\[[0-9]\{8\}_[0-9]\{6\}\] //' $(LOGFILE) > tmp1.log
-	@sed 's/^\[[0-9]\{8\}_[0-9]\{6\}\] //' 19920104_091532.log > tmp2.log
+	@./$(NAME) > $(OUTFILE)
 	@echo "Differences between actual and expected output (if any):"
-	@diff tmp1.log tmp2.log || true
-	@$(RM) tmp1.log tmp2.log
+	@diff $(OUTFILE) expected.txt
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

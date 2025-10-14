@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 15:54:33 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/10 17:22:06 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:31:23 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 int main()
 {
 	int n;
-	std::cout << "Enter the number of zombies in the horde: ";
+	std::cout << "Enter the number of zombies in the horde: " << std::flush;
 	std::cin >> n;
 	
 	std::string name;
-	std::cout << "Enter the name of the zombies: ";
+	std::cout << "Enter the name of the zombies: " << std::flush;
 	std::cin >> name;
 
 	Zombie* horde;

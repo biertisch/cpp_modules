@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:25 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/09 15:17:44 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:30:28 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 bool promptInfo(const std::string description, std::string &input)
 {
 
-	std::cout << "Enter " << description << ": ";
+	std::cout << "Enter " << description << ": " << std::flush;
 	if (!std::getline(std::cin, input))
 	{
 		if (std::cin.eof())

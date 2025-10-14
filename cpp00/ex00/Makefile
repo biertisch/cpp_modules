@@ -1,4 +1,4 @@
-NAME		=	megaphone
+NAME		=	megaphone.out
 
 SRC			=	megaphone.cpp
 OBJ         =	$(patsubst %.cpp, %.o, $(SRC))

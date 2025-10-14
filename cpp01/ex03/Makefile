@@ -1,4 +1,4 @@
-NAME		=	violence
+NAME		=	violence.out
 
 SRC			=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 

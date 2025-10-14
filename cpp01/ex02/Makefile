@@ -1,4 +1,4 @@
-NAME		=	thisIsBrain
+NAME		=	thisIsBrain.out
 
 SRC			=	main.cpp
 OBJ         =	$(patsubst %.cpp, %.o, $(SRC))

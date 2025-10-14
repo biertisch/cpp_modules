@@ -1,4 +1,4 @@
-NAME		=	replacer
+NAME		=	replacer.out
 
 SRC			=	main.cpp file.cpp text.cpp
 

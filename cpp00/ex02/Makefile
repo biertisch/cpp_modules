@@ -1,4 +1,4 @@
-NAME		=	bank
+NAME		=	bank.out
 
 SRC			=	tests.cpp Account.cpp
 

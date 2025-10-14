@@ -1,4 +1,4 @@
-NAME		=	moarBrainz
+NAME		=	moarBrainz.out
 
 SRC			=	main.cpp Zombie.cpp zombieHorde.cpp
 

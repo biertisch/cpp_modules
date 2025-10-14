@@ -2,15 +2,4 @@
 *.pdf
 *.o
 *obj/
-cpp00/ex00/megaphone
-cpp00/ex01/phonebook
-cpp00/ex02/bank
-cpp00/ex02/bank.log
-cpp01/ex00/brainz
-cpp01/ex01/moarBrainz
-cpp01/ex02/thisIsBrain
-cpp01/ex03/violence
-cpp01/ex04/replacer
-cpp01/ex05/harl
-cpp01/ex06/harlFilter
-cpp02/ex00/fixed
+*.out

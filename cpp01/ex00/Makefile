@@ -1,4 +1,4 @@
-NAME		=	brainz
+NAME		=	brainz.out
 
 SRC			=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 

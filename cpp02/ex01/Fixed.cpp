@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:46:36 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/13 14:32:52 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/15 16:05:17 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 Fixed::Fixed() : raw_(0)
 {
 	std::cout << "Default constructor called\n";
+}
+
+Fixed::Fixed(int real) : raw_(real << fractionalBits_)
+{
+	std::cout << "Int constructor called\n";
+}
+
+Fixed::Fixed(float real) : raw_(roundf(real * (1 << fractionalBits_)))
+{
+	std::cout << "Float constructor called\n";
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -38,12 +48,26 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits() const
 {
-	std::cout << "getRawBits member function called\n";	
 	return raw_;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called\n";
 	raw_ = raw;
+}
+
+int Fixed::toInt() const
+{
+	return roundf(toFloat());
+}
+
+float Fixed::toFloat() const
+{
+	return raw_ / (float)(1 << fractionalBits_);
+}
+
+std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
+{
+	stream << fixed.toFloat();
+	return stream;
 }

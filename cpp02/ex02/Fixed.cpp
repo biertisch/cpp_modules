@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:46:36 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/15 17:26:24 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/20 16:02:14 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 Fixed::Fixed() : raw_(0)
 {
-	std::cout << "Default constructor called\n";
+	// std::cout << "Default constructor called\n";
 }
 
 Fixed::Fixed(int real) : raw_(real << fractionalBits_)
 {
-	std::cout << "Int constructor called\n";
+	// std::cout << "Int constructor called\n";
 }
 
 Fixed::Fixed(float real) : raw_(roundf(real * (1 << fractionalBits_)))
 {
-	std::cout << "Float constructor called\n";
+	// std::cout << "Float constructor called\n";
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << "Copy constructor called\n";
+	// std::cout << "Copy constructor called\n";
 	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-	std::cout << "Copy assignment operator called\n";
+	// std::cout << "Copy assignment operator called\n";
 	if (this != &other)
 		raw_ = other.raw_;
 	return *this;
@@ -43,7 +43,7 @@ Fixed& Fixed::operator=(const Fixed& other)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called\n";
+	// std::cout << "Destructor called\n";
 }
 
 int Fixed::getRawBits() const

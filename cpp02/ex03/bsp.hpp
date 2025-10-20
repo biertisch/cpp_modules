@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   bsp.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 17:30:38 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 15:13:47 by beatde-a         ###   ########.fr       */
+/*   Created: 2025/10/20 15:20:47 by beatde-a          #+#    #+#             */
+/*   Updated: 2025/10/20 16:08:15 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-#define POINT_HPP
+#ifndef BSP_HH
+#define BSP_HH
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 #include <iostream>
 
-class Point
-{
-	private:
-		const Fixed	x_;
-		const Fixed y_;
-
-	public:
-		Point();
-		Point(const float x, const float y);
-		Point(const Point& other);
-		Point&	operator=(const Point& other);
-		~Point();
-		float	getX() const;
-		float	getY() const;
-};
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

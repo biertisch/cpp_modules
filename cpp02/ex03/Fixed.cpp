@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:46:36 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/15 17:43:36 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/20 15:36:48 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 Fixed::Fixed() : raw_(0)
 {
-	std::cout << "Fixed default constructor called\n";
+	// std::cout << "Fixed default constructor called\n";
 }
 
 Fixed::Fixed(int real) : raw_(real << fractionalBits_)
 {
-	std::cout << "Fixed int constructor called\n";
+	// std::cout << "Fixed int constructor called\n";
 }
 
 Fixed::Fixed(float real) : raw_(roundf(real * (1 << fractionalBits_)))
 {
-	std::cout << "Fixed float constructor called\n";
+	// std::cout << "Fixed float constructor called\n";
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << "Fixed copy constructor called\n";
+	// std::cout << "Fixed copy constructor called\n";
 	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-	std::cout << "Fixed copy assignment operator called\n";
+	// std::cout << "Fixed copy assignment operator called\n";
 	if (this != &other)
 		raw_ = other.raw_;
 	return *this;
@@ -43,7 +43,7 @@ Fixed& Fixed::operator=(const Fixed& other)
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed destructor called\n";
+	// std::cout << "Fixed destructor called\n";
 }
 
 int Fixed::getRawBits() const

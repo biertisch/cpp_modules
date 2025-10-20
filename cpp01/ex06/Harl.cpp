@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:37:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:17:57 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/20 21:15:44 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,15 @@ void Harl::filter(const std::string& level)
 		case 0:
 			debug();
 			std::cout << '\n';
+			// fallthrough
 		case 1:
 			info();
 			std::cout << '\n';
+			//fallthrough
 		case 2:
 			warning();
 			std::cout << '\n';
+			//fallthrough
 		case 3:
 			error();
 			break;

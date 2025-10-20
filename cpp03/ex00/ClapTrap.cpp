@@ -1,0 +1,102 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/20 17:32:05 by beatde-a          #+#    #+#             */
+/*   Updated: 2025/10/20 17:57:35 by beatde-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap() : name_("CT"), hp_(10), energy_(10), damage_(0)
+{
+	std::cout << "Claptrap default constructor called\n";
+}
+
+ClapTrap::ClapTrap(const std::string& name) : name_(name), hp_(10), energy_(10), damage_(0)
+{
+	std::cout << "Claptrap parametrized constructor called\n";
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other) : name_(other.name_), hp_(other.hp_), energy_(other.energy_), damage_(other.damage_)
+{
+	std::cout << "Claptrap copy constructor called\n";
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+	std::cout << "Claptrap assignment operator called\n";
+
+	if (this != &other)
+	{
+		name_ = other.name_;
+		hp_ = other.hp_;
+		energy_ = other.energy_;
+		damage_ = other.damage_;
+	}
+	return *this;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap destructor called\n";
+}
+
+void ClapTrap::attack(const std::string& target)
+{
+	if (hp_ <= 0)
+	{
+		std::cout << "Dear old ClapTrap " << name_ << " lies innocuously dead, causing no harm.\n";
+		return;
+	}
+
+	if (energy_ == 0)
+	{
+		std::cout << "Though ferocious, ClapTrap " << name_ << " is too exhausted to attack.\n";
+		return;
+	}
+
+	energy_--;
+	std::cout << "ClapTrap " << name_ << " viciously attacks " << target << ", causing " << damage_ << " damage points!\n";
+}
+
+void ClapTrap::takeDamage(unsigned int amount)
+{
+	hp_ -= amount;
+
+	if (hp_ > 0)
+		std::cout << "ClapTrap " << name_ << " was wounded, taking " << amount << " damage points.\n";
+	else
+		std::cout << "Honorable, fruitful ClapTrap " << name_ << " was fatally wounded, leaving behind his 89724 children.\n";
+}
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+	if (hp_ <= 0)
+	{
+		std::cout << "Sweet ClapTrap " << name_ << " lies unrepairably dead.\n";
+		return;
+	}
+
+	if (energy_ == 0)
+	{
+		std::cout << "Though hurt, ClapTrap " << name_ << " is too exhausted to repair themselves.\n";
+		return;
+	}
+
+	energy_--;
+	if (hp_ + amount > 10)
+	{
+		hp_ = 10;
+		std::cout << "ClapTrap " << name_ << " skillfully repairs themselves, regaining full health!\n";
+	}
+	else
+	{
+		hp_ += amount;
+		std::cout << "ClapTrap " << name_ << " skillfully repairs themselves, regaining " << amount << " hit points.\n";
+	}
+}

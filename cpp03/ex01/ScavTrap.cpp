@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:28:38 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 19:28:24 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 19:30:13 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void ScavTrap::attack(const std::string& target)
 	}
 
 	energy_--;
-	std::cout << name_ << " valiantly attacks " << target << ", causing " << damage_ << " damage points!"
+	std::cout << "ScavTrap " << name_ << " valiantly attacks " << target << ", causing " << damage_ << " damage points!"
 		<< " (Remaining energy: " << energy_ << ")\n";
 }
 

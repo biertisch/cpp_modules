@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:22:41 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 19:10:05 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:00:32 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class ClapTrap
 {
 	private:
 		std::string 	name_;
+		unsigned int	maxHP_;		
 		int				hp_;
 		unsigned int	energy_;
 		unsigned int	damage_;

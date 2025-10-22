@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:32:05 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 17:57:35 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:05:32 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name_("CT"), hp_(10), energy_(10), damage_(0)
+ClapTrap::ClapTrap() : name_("CT"), maxHP_(10), hp_(10), energy_(10), damage_(0)
 {
 	std::cout << "Claptrap default constructor called\n";
 }
 
-ClapTrap::ClapTrap(const std::string& name) : name_(name), hp_(10), energy_(10), damage_(0)
+ClapTrap::ClapTrap(const std::string& name) : name_(name), maxHP_(10), hp_(10), energy_(10), damage_(0)
 {
 	std::cout << "Claptrap parametrized constructor called\n";
 }
@@ -89,9 +89,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 
 	energy_--;
-	if (hp_ + amount > 10)
+	if (hp_ + amount > maxHP_)
 	{
-		hp_ = 10;
+		hp_ = maxHP_;
 		std::cout << "ClapTrap " << name_ << " skillfully repairs themselves, regaining full health!\n";
 	}
 	else

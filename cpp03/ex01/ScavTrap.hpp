@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:19:53 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 19:00:54 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 18:32:14 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 class ScavTrap : public ClapTrap
 {
+	private:
+		void initStats();
+
 	public:
 		ScavTrap();
 		ScavTrap(const std::string& name);

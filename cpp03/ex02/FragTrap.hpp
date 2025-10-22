@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 12:29:36 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 12:39:35 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 18:36:10 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 class FragTrap : public ClapTrap
 {
+	private:
+		void initStats();
+
 	public:
 		FragTrap();
 		FragTrap(std::string name);
@@ -26,7 +29,7 @@ class FragTrap : public ClapTrap
 		FragTrap& operator=(const FragTrap& other);
 		~FragTrap();
 
-		void	highFivesGuys();
+		void highFivesGuys();
 };
 
 #endif

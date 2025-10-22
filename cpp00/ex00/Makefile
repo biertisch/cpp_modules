@@ -7,8 +7,6 @@ C++			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98
 RM			=	rm -rf
 
-SENTINEL	=	.compiled
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -17,13 +15,8 @@ $(NAME): $(OBJ)
 	@echo "Megaphone built!"
 
 %.o: %.cpp
+	@echo "Compiling $@..."
 	@$(C++) $(CFLAGS) -c $< -o $@
-
-$(OBJ): $(SENTINEL)
-
-$(SENTINEL):
-	@echo "Compiling object file..."
-	@touch $@
 
 clean:
 	@echo "Removing object file..."

@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:32:05 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 12:58:50 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:59:47 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : name_("CT"), maxHP_(100), hp_(100), energy_(100), damage_
 	std::cout << "Claptrap default constructor called\n";
 }
 
-ClapTrap::ClapTrap(const std::string& name) : name_(name), hp_(100), energy_(100), damage_(30)
+ClapTrap::ClapTrap(const std::string& name) : name_(name), maxHP_(100), hp_(100), energy_(100), damage_(30)
 {
 	std::cout << "Claptrap parametrized constructor called\n";
 }

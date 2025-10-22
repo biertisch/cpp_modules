@@ -6,20 +6,30 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:28:38 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 19:09:27 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 19:30:01 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+void ScavTrap::initStats()
+{
+	maxHP_ = 100;
+	hp_ = 100;
+	energy_ = 50;
+	damage_ = 20;
+}
+
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap default constructor called\n";
+	initStats();
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap parametrized constructor called\n";
+	initStats();
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
@@ -42,23 +52,24 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (getHP() <= 0)
+	if (hp_ <= 0)
 	{
-		std::cout << "Dear old ScavTrap " << getName() << " lies innocuously dead, causing no harm.\n";
+		std::cout << "Dear old ScavTrap " << name_ << " lies innocuously dead, causing no harm.\n";
 		return;
 	}
 
-	if (getEnergy() == 0)
+	if (energy_ == 0)
 	{
-		std::cout << "Though ferocious, " << getName() << " is too exhausted to attack.\n";
+		std::cout << "Though ferocious, ScavTrap " << name_ << " is too exhausted to attack.\n";
 		return;
 	}
 
-	decreaseEnergy();
-	std::cout << getName() << " valiantly attacks " << target << ", causing " << getDamage() << " damage points!\n";
+	energy_--;
+	std::cout << "ScavTrap " << name_ << " valiantly attacks " << target << ", causing " << damage_ << " damage points!"
+		<< " (Remaining energy: " << energy_ << ")\n";
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << getName() << " is now in gate keeper mode.\n";
+	std::cout << "ScavTrap " << name_ << " is now in gate keeper mode.\n";
 }

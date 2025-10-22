@@ -1,13 +1,13 @@
-NAME		=	fragtrap.out
+NAME		=	diamondtrap.out
 
-SRC			=	main.cpp ClapTrap.cpp FragTrap.cpp
+SRC			=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJ_DIR		=	obj/
 OBJ         =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
 DEP			=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
 
 C++			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98 -MMD -MP
+CFLAGS		=	-Wall -Werror -Wextra -Wshadow -g -std=c++98 -MMD -MP
 RM			=	rm -rf
 
 all: $(NAME)

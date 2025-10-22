@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:22:41 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 12:53:23 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:58:39 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap
 {
 	private:
 		std::string 	name_;
-		int				maxHP_;
+		unsigned int	maxHP_;
 		int				hp_;
 		unsigned int	energy_;
 		unsigned int	damage_;

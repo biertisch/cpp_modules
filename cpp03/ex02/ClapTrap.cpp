@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:32:05 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 12:56:49 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:58:50 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 
 	energy_--;
-	if (hp_ + static_cast<int>(amount) >= maxHP_)
+	if (hp_ + amount >= maxHP_)
 	{
 		hp_ = maxHP_;
 		std::cout << name_ << " skillfully repairs themselves, regaining full health!\n";

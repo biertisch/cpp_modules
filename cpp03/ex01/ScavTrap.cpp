@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:28:38 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 18:35:12 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 19:28:24 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,13 @@ void ScavTrap::attack(const std::string& target)
 
 	if (energy_ == 0)
 	{
-		std::cout << "Though ferocious, " << name_ << " is too exhausted to attack.\n";
+		std::cout << "Though ferocious, ScavTrap " << name_ << " is too exhausted to attack.\n";
 		return;
 	}
 
 	energy_--;
-	std::cout << name_ << " valiantly attacks " << target << ", causing " << damage_ << " damage points!\n";
+	std::cout << name_ << " valiantly attacks " << target << ", causing " << damage_ << " damage points!"
+		<< " (Remaining energy: " << energy_ << ")\n";
 }
 
 void ScavTrap::guardGate()

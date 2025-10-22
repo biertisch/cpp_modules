@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:32:05 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 13:01:20 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/22 18:00:37 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name_("CT"), maxHP_(100), hp_(100), energy_(50), damage_(20)
+ClapTrap::ClapTrap() : name_("default"), maxHP_(100), hp_(100), energy_(50), damage_(20)
 {
 	std::cout << "Claptrap default constructor called\n";
 }

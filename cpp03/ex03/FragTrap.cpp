@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 12:39:41 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 18:36:51 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/23 14:08:28 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void FragTrap::initStats()
 {
-	maxHP_ = 100;
-	hp_ = 100;
-	energy_ = 100;
-	damage_ = 30;
+	setMaxHP(100);
+	setHP(100);
+	setEnergy(100);
+	setDamage(30);
 }
 
 FragTrap::FragTrap() : ClapTrap()
@@ -52,5 +52,5 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap " << name_ << " is eagerly requesting a high-five!\n";
+	std::cout << "FragTrap " << getName() << " is eagerly requesting a high-five!\n";
 }

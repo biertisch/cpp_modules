@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:54:40 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 19:41:13 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/23 15:18:09 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void DiamondTrap::initStats()
 {
-	maxHP_ = 100;
-	hp_ = 100;
-	energy_ = 50;
-	damage_ = 30;
+	setMaxHP(100);
+	setHP(100);
+	setEnergy(50);
+	setDamage(30);
 }
 
 DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), ScavTrap(), FragTrap(), name_("default")
@@ -62,5 +62,5 @@ void DiamondTrap::attack(const std::string& target)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "Who am I truly? Am I myself " << name_ << " or my ancestor " << ClapTrap::name_ << "?\n";
+	std::cout << "Who am I truly? Am I myself " << name_ << " or my ancestor " << getName() << "?\n";
 }

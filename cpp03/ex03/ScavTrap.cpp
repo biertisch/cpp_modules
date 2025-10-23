@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:28:38 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 19:30:01 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/10/23 14:03:59 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void ScavTrap::initStats()
 {
-	maxHP_ = 100;
-	hp_ = 100;
-	energy_ = 50;
-	damage_ = 20;
+	setMaxHP(100);
+	setHP(100);
+	setEnergy(50);
+	setDamage(20);
 }
 
 ScavTrap::ScavTrap() : ClapTrap()
@@ -52,24 +52,24 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (hp_ <= 0)
+	if (getHP() <= 0)
 	{
-		std::cout << "Dear old ScavTrap " << name_ << " lies innocuously dead, causing no harm.\n";
+		std::cout << "Dear old ScavTrap " << getName() << " lies innocuously dead, causing no harm.\n";
 		return;
 	}
 
-	if (energy_ == 0)
+	if (getEnergy() == 0)
 	{
-		std::cout << "Though ferocious, ScavTrap " << name_ << " is too exhausted to attack.\n";
+		std::cout << "Though ferocious, ScavTrap " << getName() << " is too exhausted to attack.\n";
 		return;
 	}
 
-	energy_--;
-	std::cout << "ScavTrap " << name_ << " valiantly attacks " << target << ", causing " << damage_ << " damage points!"
-		<< " (Remaining energy: " << energy_ << ")\n";
+	setEnergy(getEnergy() - 1);
+	std::cout << "ScavTrap " << getName() << " valiantly attacks " << target << ", causing " << getDamage() << " damage points!\n";
+	printCurrentStats();
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << name_ << " is now in gate keeper mode.\n";
+	std::cout << "ScavTrap " << getName() << " is now in gate keeper mode.\n";
 }

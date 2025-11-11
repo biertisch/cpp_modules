@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:03:43 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/11 14:04:42 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:35:22 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define ICHARACTER_HPP
 
 #include <string>
-#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

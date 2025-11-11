@@ -7,7 +7,7 @@ OBJ		=	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
 DEP		=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
 
 C++		=	c++
-CFLAGS	=	std=c++98 -g -Wall -Werror -Wextra -MMD -MP
+CFLAGS	=	-std=c++98 -g -Wall -Werror -Wextra -MMD -MP
 RM		=	rm -rf
 
 all: $(NAME)
@@ -19,7 +19,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_DIR)%.o: %.cpp | $(OBJ_DIR)
 	@echo "Compiling $@..."
-	@$(C++) $(CFLAGS) -c $< -o $o
+	@$(C++) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	@mkdir -p $@
@@ -28,11 +28,11 @@ clean:
 	@echo "Removing object files..."
 	@$(RM) $(OBJ_DIR)
 
-flcean: clean
+fclean: clean
 	@echo "Removing executable..."
 	@$(RM) $(NAME)
 
-re: flcean all
+re: fclean all
 
 .PHONY: all clean fclean re
 

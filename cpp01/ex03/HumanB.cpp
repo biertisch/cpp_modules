@@ -6,24 +6,24 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 10:12:50 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:16:26 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:00:11 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : name_(name), weapon_(NULL) {}
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL) {}
 
-HumanB::HumanB(std::string name, Weapon& weapon) : name_(name), weapon_(&weapon) {}
+HumanB::HumanB(std::string name, Weapon& weapon) : _name(name), _weapon(&weapon) {}
 
 HumanB::~HumanB() {}
 
 void	HumanB::setWeapon(Weapon& weapon)
 {
-	weapon_ = &weapon;
+	_weapon = &weapon;
 }
 
 void	HumanB::attack()
 {
-	std::cout << name_ << " attacks with their " << weapon_->getType() << '\n';
+	std::cout << _name << " attacks with their " << _weapon->getType() << '\n';
 }

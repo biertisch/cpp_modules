@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:32:05 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/23 14:04:41 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:03:47 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 // Public
-ClapTrap::ClapTrap() : name_("default"), maxHP_(10), hp_(10), energy_(10), damage_(0)
+ClapTrap::ClapTrap() : _name("default"), _maxHP(10), _hp(10), _energy(10), _damage(0)
 {
 	std::cout << "Claptrap default constructor called\n";
 }
 
-ClapTrap::ClapTrap(const std::string& name) : name_(name), maxHP_(10), hp_(10), energy_(10), damage_(0)
+ClapTrap::ClapTrap(const std::string& name) : _name(name), _maxHP(10), _hp(10), _energy(10), _damage(0)
 {
 	std::cout << "Claptrap parametrized constructor called\n";
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other) : name_(other.name_), hp_(other.hp_), energy_(other.energy_), damage_(other.damage_)
+ClapTrap::ClapTrap(const ClapTrap& other) : _name(other._name), _hp(other._hp), _energy(other._energy), _damage(other._damage)
 {
 	std::cout << "Claptrap copy constructor called\n";
 }
@@ -34,10 +34,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 	if (this != &other)
 	{
-		name_ = other.name_;
-		hp_ = other.hp_;
-		energy_ = other.energy_;
-		damage_ = other.damage_;
+		_name = other._name;
+		_hp = other._hp;
+		_energy = other._energy;
+		_damage = other._damage;
 	}
 	return *this;
 }
@@ -49,60 +49,60 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (hp_ <= 0)
+	if (_hp <= 0)
 	{
-		std::cout << "Dear old ClapTrap " << name_ << " lies innocuously dead, causing no harm.\n";
+		std::cout << "Dear old ClapTrap " << _name << " lies innocuously dead, causing no harm.\n";
 		return;
 	}
 
-	if (energy_ == 0)
+	if (_energy == 0)
 	{
-		std::cout << "Though ferocious, ClapTrap " << name_ << " is too exhausted to attack.\n";
+		std::cout << "Though ferocious, ClapTrap " << _name << " is too exhausted to attack.\n";
 		return;
 	}
 
-	energy_--;
-	std::cout << "ClapTrap " << name_ << " viciously attacks " << target << ", causing " << damage_ << " damage points!\n";
+	_energy--;
+	std::cout << "ClapTrap " << _name << " viciously attacks " << target << ", causing " << _damage << " damage points!\n";
 	printCurrentStats();
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	hp_ -= amount;
+	_hp -= amount;
 
-	if (hp_ > 0)
+	if (_hp > 0)
 	{
-		std::cout << "ClapTrap " << name_ << " was wounded, taking " << amount << " damage points.\n";
+		std::cout << "ClapTrap " << _name << " was wounded, taking " << amount << " damage points.\n";
 		printCurrentStats();
 	}
 	else
-		std::cout << "Honorable, fruitful ClapTrap " << name_ << " was fatally wounded, leaving behind 89724 children.\n";
+		std::cout << "Honorable, fruitful ClapTrap " << _name << " was fatally wounded, leaving behind 89724 children.\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (hp_ <= 0)
+	if (_hp <= 0)
 	{
-		std::cout << "Sweet ClapTrap " << name_ << " lies unrepairably dead.\n";
+		std::cout << "Sweet ClapTrap " << _name << " lies unrepairably dead.\n";
 		return;
 	}
 
-	if (energy_ == 0)
+	if (_energy == 0)
 	{
-		std::cout << "Though hurt, ClapTrap " << name_ << " is too exhausted to repair themselves.\n";
+		std::cout << "Though hurt, ClapTrap " << _name << " is too exhausted to repair themselves.\n";
 		return;
 	}
 
-	energy_--;
-	if (hp_ + amount > maxHP_)
+	_energy--;
+	if (_hp + amount > _maxHP)
 	{
-		hp_ = maxHP_;
-		std::cout << "ClapTrap " << name_ << " skillfully repairs themselves, regaining full health!\n";
+		_hp = _maxHP;
+		std::cout << "ClapTrap " << _name << " skillfully repairs themselves, regaining full health!\n";
 	}
 	else
 	{
-		hp_ += amount;
-		std::cout << "ClapTrap " << name_ << " skillfully repairs themselves, regaining " << amount << " hit points.\n";
+		_hp += amount;
+		std::cout << "ClapTrap " << _name << " skillfully repairs themselves, regaining " << amount << " hit points.\n";
 	}
 	printCurrentStats();
 }
@@ -110,55 +110,55 @@ void ClapTrap::beRepaired(unsigned int amount)
 // Protected
 std::string ClapTrap::getName() const
 {
-	return name_;
+	return _name;
 }
 
 unsigned int ClapTrap::getMaxHP() const
 {
-	return maxHP_;
+	return _maxHP;
 }
 
 int ClapTrap::getHP() const
 {
-	return hp_;
+	return _hp;
 }
 
 unsigned int ClapTrap::getEnergy() const
 {
-	return energy_;
+	return _energy;
 }
 
 unsigned int ClapTrap::getDamage() const
 {
-	return damage_;
+	return _damage;
 }
 
 void ClapTrap::setName(const std::string& newName)
 {
-	name_ = newName;
+	_name = newName;
 }
 
 void ClapTrap::printCurrentStats() const
 {
-	std::cout << '[' << name_ << "'s current stats: HP=" << hp_ << " Energy=" << energy_ << " Damage=" << damage_ << "]\n";
+	std::cout << '[' << _name << "'s current stats: HP=" << _hp << " Energy=" << _energy << " Damage=" << _damage << "]\n";
 }
 
 void ClapTrap::setMaxHP(unsigned int newMaxHP)
 {
-	maxHP_ = newMaxHP;
+	_maxHP = newMaxHP;
 }
 
 void ClapTrap::setHP(int newHP)
 {
-	hp_ = newHP;
+	_hp = newHP;
 }
 
 void ClapTrap::setEnergy(unsigned int newEnergy)
 {
-	energy_ = newEnergy;	
+	_energy = newEnergy;
 }
 
 void ClapTrap::setDamage(unsigned int newDamage)
 {
-	damage_ = newDamage;
+	_damage = newDamage;
 }

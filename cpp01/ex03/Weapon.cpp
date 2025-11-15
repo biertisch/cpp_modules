@@ -6,24 +6,24 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 09:58:45 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:16:46 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:59:58 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon() : type_("") {}
+Weapon::Weapon() : _type("") {}
 
-Weapon::Weapon(std::string type) : type_(type) {}
+Weapon::Weapon(std::string type) : _type(type) {}
 
 Weapon::~Weapon() {}
 
 std::string	Weapon::getType()
 {
-	return type_;
+	return _type;
 }
 
 void	Weapon::setType(std::string newType)
 {
-	type_ = newType;
+	_type = newType;
 }

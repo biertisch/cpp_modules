@@ -6,19 +6,19 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 09:54:05 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:16:35 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:00:11 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#ifndef _weaponHPP
+#define _weaponHPP
 
 #include <string>
 
 class Weapon
 {
 	private:
-		std::string	type_;
+		std::string	_type;
 
 	public:
 		Weapon();

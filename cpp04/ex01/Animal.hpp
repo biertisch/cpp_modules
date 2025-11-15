@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:59:04 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/10 15:44:00 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:59:58 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Animal
 {
 	protected:
-		std::string type_;
+		std::string _type;
 
 	public:
 		Animal();

@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:23:47 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/10 17:14:43 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:05:00 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Brain::Brain()
 	std::cout << "Brain default constructor called\n";
 
 	for (int i = 0; i < 100; i++)
-		ideas_[i] = "default idea";
+		_ideas[i] = "default idea";
 }
 
 Brain::Brain(const std::string& type)
@@ -26,10 +26,10 @@ Brain::Brain(const std::string& type)
 
 	if (type == "Cat")
 		for (int i = 0; i < 100; i++)
-			ideas_[i] = "tuna";
+			_ideas[i] = "tuna";
 	else if (type == "Dog")
 		for (int i = 0; i < 100; i++)
-			ideas_[i] = "bones";
+			_ideas[i] = "bones";
 }
 
 Brain::Brain(const Brain& other)
@@ -37,7 +37,7 @@ Brain::Brain(const Brain& other)
 	std::cout << "Brain copy constructor called\n";
 
 	for (int i = 0; i < 100; i++)
-		ideas_[i] = other.ideas_[i];
+		_ideas[i] = other._ideas[i];
 }
 
 Brain& Brain::operator=(const Brain& other)
@@ -46,7 +46,7 @@ Brain& Brain::operator=(const Brain& other)
 
 	if (this != &other)
 		for (int i = 0; i < 100; i++)
-			ideas_[i] = other.ideas_[i];
+			_ideas[i] = other._ideas[i];
 	return (*this);
 }
 
@@ -57,10 +57,10 @@ Brain::~Brain()
 
 std::string Brain::getIdea(int index) const
 {
-	return (ideas_[index]);
+	return (_ideas[index]);
 }
 
 void Brain::setIdea(int index, const std::string& idea)
 {
-	ideas_[index] = idea;
+	_ideas[index] = idea;
 }

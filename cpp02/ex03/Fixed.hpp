@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:29:51 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/15 17:24:35 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:01:55 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Fixed
 {
 	private:
-		int					raw_;
-		static const int	fractionalBits_ = 8;
+		int					_raw;
+		static const int	_fractionalBits = 8;
 
 	public:
 		Fixed();

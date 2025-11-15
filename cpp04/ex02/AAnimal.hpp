@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:59:04 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/11 12:21:26 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:59:58 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class AAnimal
 {
 	protected:
-		std::string type_;
+		std::string _type;
 
 	public:
 		AAnimal();

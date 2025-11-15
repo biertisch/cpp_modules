@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:35:02 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:17:44 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:01:14 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class	Harl
 {
 	private:
-		std::string levels_[N];
+		std::string _levels[N];
 		void		debug();
 		void		info();
 		void		warning();

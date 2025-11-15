@@ -6,23 +6,23 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:40:13 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 16:17:48 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:02:47 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point() : x_(Fixed(0)), y_(Fixed(0))
+Point::Point() : _x(Fixed(0)), _y(Fixed(0))
 {
 	// std::cout << "Point default constructor called\n";
 }
 
-Point::Point(const float x, const float y) : x_(Fixed(x)), y_(Fixed(y))
+Point::Point(const float x, const float y) : _x(Fixed(x)), _y(Fixed(y))
 {
 	// std::cout << "Point float constructor called\n";
 }
 
-Point::Point(const Point& other) : x_(other.x_), y_(other.y_)
+Point::Point(const Point& other) : _x(other._x), _y(other._y)
 {
 	// std::cout << "Point copy constructor called\n";
 	*this = other;
@@ -42,10 +42,10 @@ Point::~Point()
 
 float Point::getX() const
 {
-	return x_.toFloat();
+	return _x.toFloat();
 }
 
 float Point::getY() const
 {
-	return y_.toFloat();
+	return _y.toFloat();
 }

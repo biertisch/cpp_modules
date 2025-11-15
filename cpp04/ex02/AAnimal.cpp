@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:03:06 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/11 12:17:44 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:59:58 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal() : type_("default")
+AAnimal::AAnimal() : _type("default")
 {
 	std::cout << "AAnimal default constructor called\n";
 }
 
-AAnimal::AAnimal(const std::string& type) : type_(type)
+AAnimal::AAnimal(const std::string& type) : _type(type)
 {
 	std::cout << "AAnimal parametrized constructor called\n";
 }
 
-AAnimal::AAnimal(const AAnimal& other) : type_(other.type_)
+AAnimal::AAnimal(const AAnimal& other) : _type(other._type)
 {
 	std::cout << "AAnimal copy constructor called\n";
 }
@@ -32,7 +32,7 @@ AAnimal& AAnimal::operator=(const AAnimal& other)
 	std::cout << "AAnimal assignment operator called\n";
 
 	if (this != &other)
-		type_ = other.type_;
+		_type = other._type;
 	return (*this);
 }
 
@@ -48,5 +48,5 @@ void AAnimal::makeSound() const
 
 std::string AAnimal::getType() const
 {
-	return (type_);
+	return (_type);
 }

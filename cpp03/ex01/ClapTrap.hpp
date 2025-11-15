@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:22:41 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/23 11:55:55 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:03:47 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 class ClapTrap
 {
 	private:
-		std::string 	name_;
-		unsigned int	maxHP_;
-		int				hp_;
-		unsigned int	energy_;
-		unsigned int	damage_;
+		std::string 	_name;
+		unsigned int	_maxHP;
+		int				_hp;
+		unsigned int	_energy;
+		unsigned int	_damage;
 
 	protected:
 		std::string getName() const;

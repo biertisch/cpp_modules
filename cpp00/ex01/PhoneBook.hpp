@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:39 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:14:21 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:02:37 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 #include <iostream>
 #include <iomanip>
 
-#define MAX_SIZE 8
+#define MA_xSIZE 8
 
 class PhoneBook
 {
 	private:
-		Contact		contacts_[MAX_SIZE];
-		int			nextIndex_;
-		int			validContacts_;
+		Contact		_contacts[MA_xSIZE];
+		int			_nextIndex;
+		int			_validContacts;
 
 		std::string	formatField(const std::string &str);
 

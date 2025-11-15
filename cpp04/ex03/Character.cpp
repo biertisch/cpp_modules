@@ -3,53 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:02:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/11 16:48:26 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:57:22 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : ICharacter(), name_("John Doe")
+Character::Character() : ICharacter(), _name("John Doe")
 {
-	// std::cout << "Character default constructor called\n";
-	initSpells(inventory_, 4);
-	initSpells(unequiped_, 100);	
+	// std::cout << "Character default constructor called.\n";
+	initSpells(_inventory, 4);
+	initSpells(_unequiped, 100);
 }
 
-Character::Character(const std::string& name) : ICharacter(), name_(name)
+Character::Character(const std::string& name) : ICharacter(), _name(name)
 {
-	// std::cout << "Character parametrized constructor called\n";
-	initSpells(inventory_, 4);
-	initSpells(unequiped_, 100);	
+	// std::cout << "Character parametrized constructor called.\n";
+	initSpells(_inventory, 4);
+	initSpells(_unequiped, 100);
 }
 
-Character::Character(const Character& other) : ICharacter(), name_(other.name_)
+Character::Character(const Character& other) : ICharacter(), _name(other._name)
 {
-	// std:cout << "Character copy constructor called\n";
+	// std:cout << "Character copy constructor called.\n";
 	copyInventory(other);
-	initSpells(unequiped_, 100);
+	initSpells(_unequiped, 100);
 }
 
 Character& Character::operator=(const Character& other)
 {
-	// std::cout << "Character assignment operator called\n";
+	// std::cout << "Character assignment operator called.\n";
 	if (this != &other)
 	{
-		name_ = other.name_;
+		_name = other._name;
 		copyInventory(other);
-		initSpells(unequiped_, 100);
+		initSpells(_unequiped, 100);
 	}
 	return (*this);
 }
 
 Character::~Character()
 {
-	// std::cout << "Character destructor called\n";
-	removeSpells(inventory_, 4);
-	removeSpells(unequiped_, 100);
+	// std::cout << "Character destructor called.\n";
+	removeSpells(_inventory, 4);
+	removeSpells(_unequiped, 100);
 }
 
 void Character::initSpells(AMateria** array, int size)
@@ -62,14 +62,14 @@ void Character::copyInventory(const Character& other)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (other.inventory_[i])
+		if (other._inventory[i])
 		{
-			if (inventory_[i])
-				delete inventory_[i];
-			inventory_[i] = other.inventory_[i]->clone();
+			if (_inventory[i])
+				delete _inventory[i];
+			_inventory[i] = other._inventory[i]->clone();
 		}
 		else
-			inventory_[i] = 0;
+			_inventory[i] = 0;
 	}
 }
 
@@ -84,7 +84,7 @@ void Character::removeSpells(AMateria **array, int size)
 
 const std::string& Character::getName() const
 {
-	return name_;
+	return _name;
 }
 
 void Character::equip(AMateria* m)
@@ -92,41 +92,42 @@ void Character::equip(AMateria* m)
 	if (!m)
 	{
 		std::cout << "Nothing to equip.\n";
-		return;	
+		return;
 	}
 	for (int i = 0; i < 4; i++)
 	{
-		if (!inventory_[i])
+		if (!_inventory[i])
 		{
-			inventory_[i] = m;
-			std::cout << "Equipped with " << m->getType() << "\n";
+			_inventory[i] = m;
+			std::cout << "Equipped with " << m->getType() << ".\n";
 			return;
 		}
 	}
-	std::cout << "No space left in the inventory\n";
+	delete m;
+	std::cout << "No space left in Character inventory.\n";
 }
 
 void Character::unequip(int idx)
 {
 	if (!validateIndex(idx))
 		return;
-	if (!inventory_[idx])
+	if (!_inventory[idx])
 	{
 		std::cout << "Nothing to unequip.\n";
 		return;
 	}
 	for (int i = 0; i < 100; i++)
 	{
-		if (!unequiped_[i])
+		if (!_unequiped[i])
 		{
-			unequiped_[i] = inventory_[idx];
-			inventory_[idx] = 0;
-			std::cout << unequiped_[i]->getType() << " unequipped.\n";
+			_unequiped[i] = _inventory[idx];
+			_inventory[idx] = 0;
+			std::cout << _unequiped[i]->getType() << " unequipped.\n";
 			return;
 		}
 	}
-	std::cout << inventory_[idx]->getType() << " unequipped.\n";
-	inventory_[idx] = 0;
+	std::cout << _inventory[idx]->getType() << " unequipped.\n";
+	_inventory[idx] = 0;
 	std::cout << "Hope you saved its address, it's up to you to clean up!";
 }
 
@@ -135,13 +136,14 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (!validateIndex(idx))
 		return;
-	if (!inventory_[idx])
+	if (!_inventory[idx])
 	{
 		std::cout << "Nothing to use.\n";
 		return;
 	}
-	inventory_[idx]->use(target);
-	inventory_[idx] = 0;
+	_inventory[idx]->use(target);
+	delete _inventory[idx];
+	_inventory[idx] = 0;
 }
 
 bool Character::validateIndex(int index)

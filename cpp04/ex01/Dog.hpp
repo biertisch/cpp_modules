@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:46:31 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/10 17:15:20 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:05:38 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Dog : public Animal
 {
 	private:
-		Brain *brain_;
+		Brain* _brain;
 
 	public:
 		Dog();

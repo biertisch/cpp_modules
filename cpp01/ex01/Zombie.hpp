@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:49:26 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 09:48:50 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:58:56 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Zombie
 {
 	private:
-		std::string	name_;
+		std::string	_name;
 
 	public:
 		Zombie();

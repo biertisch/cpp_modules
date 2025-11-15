@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 10:04:56 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:15:38 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:00:11 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class HumanA
 {
 	private:
-		std::string	name_;
-		Weapon&		weapon_;
+		std::string	_name;
+		Weapon&		_weapon;
 
 	public:
 		HumanA(std::string name, Weapon& weapon);

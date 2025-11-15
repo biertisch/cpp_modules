@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:37:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 21:15:44 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:01:14 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 Harl::Harl()
 {
-	levels_[0] = "DEBUG";
-	levels_[1] = "INFO";
-	levels_[2] = "WARNING";
-	levels_[3] = "ERROR";
+	_levels[0] = "DEBUG";
+	_levels[1] = "INFO";
+	_levels[2] = "WARNING";
+	_levels[3] = "ERROR";
 }
 
 Harl::~Harl() {}
@@ -52,7 +52,7 @@ void Harl::error()
 int Harl::getLevelIndex(const std::string& level)
 {
 	for (int i = 0; i < N; i++)
-		if (level == levels_[i])
+		if (level == _levels[i])
 			return i;
 	return -1;
 }
@@ -63,7 +63,7 @@ void Harl::complain(std::string level)
 
 	for (int i = 0; i < N; i++)
 	{
-		if (level == levels_[i])
+		if (level == _levels[i])
 		{
 			(this->*functions[i])();
 			return;

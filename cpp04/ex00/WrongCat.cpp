@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:17:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/10 16:10:18 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:59:58 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongCat& WrongCat::operator=(const WrongCat& other)
 {
 	std::cout << "WrongCat assignment operator called\n";
 	if (this != &other)
-		type_ = other.type_;
+		_type = other._type;
 	return (*this);
 }
 

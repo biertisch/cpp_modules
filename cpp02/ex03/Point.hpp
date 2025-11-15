@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:30:38 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 15:13:47 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:02:47 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Point
 {
 	private:
-		const Fixed	x_;
-		const Fixed y_;
+		const Fixed	_x;
+		const Fixed _y;
 
 	public:
 		Point();

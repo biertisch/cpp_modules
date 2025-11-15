@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:09:40 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/10 17:14:53 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 12:05:25 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Cat : public Animal
 {
 	private:
-		Brain* brain_;
+		Brain* _brain;
 
 	public:
 		Cat();

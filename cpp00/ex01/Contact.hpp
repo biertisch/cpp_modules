@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:22 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:13:51 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:17:35 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 class Contact
 {
 	private:
-		std::string	firstName_;
-		std::string	lastName_;
-		std::string	nickname_;
-		std::string	phoneNumber_;
-		std::string	darkestSecret_;
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickname;
+		std::string	_phoneNumber;
+		std::string	_darkestSecret;
 
 	public:
 		Contact();

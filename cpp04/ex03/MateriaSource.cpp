@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 12:09:51 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:51:27 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 19:12:46 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ MateriaSource::MateriaSource() : IMateriaSource()
 {
 	// std::cout << "MateriaSource default constructor called.\n";
 	for (int i = 0; i < 4; i++)
-		_inventory[i] = 0;
+		_inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other) : IMateriaSource()
@@ -52,7 +52,7 @@ void MateriaSource::copyInventory(const MateriaSource& other)
 			_inventory[i] = other._inventory[i]->clone();
 		}
 		else
-			_inventory[i] = 0;
+			_inventory[i] = NULL;
 	}
 }
 

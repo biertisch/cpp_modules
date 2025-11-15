@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:02:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:57:22 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/15 19:12:01 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Character::~Character()
 void Character::initSpells(AMateria** array, int size)
 {
 	for (int i = 0; i < size; i++)
-		array[i] = 0;
+		array[i] = NULL;
 }
 
 void Character::copyInventory(const Character& other)
@@ -69,7 +69,7 @@ void Character::copyInventory(const Character& other)
 			_inventory[i] = other._inventory[i]->clone();
 		}
 		else
-			_inventory[i] = 0;
+			_inventory[i] = NULL;
 	}
 }
 
@@ -78,7 +78,10 @@ void Character::removeSpells(AMateria **array, int size)
 	for (int i = 0; i < size; i++)
 	{
 		if (array[i])
+		{
 			delete array[i];
+			array[i] = NULL;
+		}
 	}
 }
 
@@ -121,13 +124,13 @@ void Character::unequip(int idx)
 		if (!_unequiped[i])
 		{
 			_unequiped[i] = _inventory[idx];
-			_inventory[idx] = 0;
+			_inventory[idx] = NULL;
 			std::cout << _unequiped[i]->getType() << " unequipped.\n";
 			return;
 		}
 	}
 	std::cout << _inventory[idx]->getType() << " unequipped.\n";
-	_inventory[idx] = 0;
+	_inventory[idx] = NULL;
 	std::cout << "Hope you saved its address, it's up to you to clean up!";
 }
 
@@ -143,7 +146,7 @@ void Character::use(int idx, ICharacter& target)
 	}
 	_inventory[idx]->use(target);
 	delete _inventory[idx];
-	_inventory[idx] = 0;
+	_inventory[idx] = NULL;
 }
 
 bool Character::validateIndex(int index)

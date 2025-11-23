@@ -6,13 +6,15 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:25 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/23 11:27:28 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/23 12:01:21 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include <iostream>
+#include <string>
+#include <sstream>
 
-bool promptInfo(const std::string description, std::string& input)
+bool promptInfo(const std::string& description, std::string& input)
 {
 
 	std::cout << "Enter " << description << ": " << std::flush;

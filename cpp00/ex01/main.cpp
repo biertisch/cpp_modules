@@ -6,19 +6,28 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/23 11:17:46 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/23 11:59:00 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include <iostream>
+#include <string>
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-bool findContact(PhoneBook &phonebook)
+bool promptInfo(const std::string& description, std::string& input);
+bool promptIndex(int& index);
+bool promptContactInfo(std::string& name, std::string& surname,
+		std::string& nickname, std::string& number, std::string& secret);
+bool promptOption(std::string& input);
+
+bool findContact(PhoneBook& phonebook)
 {
 	int	index;
 
 	if (!phonebook.displayAll())
 		return (true);
-		
+
 	while (1)
 	{
 		if (!promptIndex(index))

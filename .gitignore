@@ -3,3 +3,5 @@
 *.o
 *obj/
 *.out
+cpp00/ex00/megaphone
+cpp01/ex06/harlFilter

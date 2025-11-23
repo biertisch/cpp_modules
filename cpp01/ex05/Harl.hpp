@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:35:02 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/12 12:17:12 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/23 18:22:22 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	Harl
 		void info();
 		void warning();
 		void error();
+		int getLevelIndex(const std::string& level);
 
 	public:
 		Harl();

@@ -1,14 +1,14 @@
-NAME		=	harl.out
+NAME	=	harl.out
 
-SRC			=	main.cpp Harl.cpp
+SRC		=	main.cpp Harl.cpp
 
-OBJ_DIR		=	obj/
-OBJ         =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
-DEP			=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
+OBJ_DIR	=	obj/
+OBJ		=	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
+DEP		=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
 
-C++			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98 -MMD -MP
-RM			=	rm -rf
+C++		=	c++
+CFLAGS	=	-Wall -Werror -Wextra -g -std=c++98 -MMD -MP
+RM		=	rm -rf
 
 all: $(NAME)
 

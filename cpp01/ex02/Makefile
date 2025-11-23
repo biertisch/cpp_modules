@@ -1,11 +1,11 @@
-NAME		=	thisIsBrain.out
+NAME	=	thisIsBrain.out
 
-SRC			=	main.cpp
-OBJ         =	$(patsubst %.cpp, %.o, $(SRC))
+SRC		=	main.cpp
+OBJ		=	$(patsubst %.cpp, %.o, $(SRC))
 
-C++			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98
-RM			=	rm -rf
+C++		=	c++
+CFLAGS	=	-Wall -Werror -Wextra -g -std=c++98
+RM		=	rm -rf
 
 all: $(NAME)
 

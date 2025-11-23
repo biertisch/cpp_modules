@@ -1,18 +1,18 @@
-NAME		=	brainz.out
+NAME	=	brainz.out
 
-SRC			=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC		=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
-OBJ_DIR		=	obj/
-OBJ         =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
-DEP			=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
+OBJ_DIR	=	obj/
+OBJ		=	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
+DEP		=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
 
-C++			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98 -MMD -MP
-RM			=	rm -rf
+C++		=	c++
+CFLAGS	=	-Wall -Werror -Wextra -g -std=c++98 -MMD -MP
+RM		=	rm -rf
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HDR)
+$(NAME): $(OBJ)
 	@echo "Linking executable..."
 	@$(C++) $(OBJ) -o $@
 	@echo "$(NAME) built!"

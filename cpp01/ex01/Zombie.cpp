@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 11:57:00 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 11:58:56 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/23 12:14:04 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie() : _name("default") {}
 
-Zombie::Zombie(std::string name) : _name(name)
+Zombie::Zombie(const std::string& name) : _name(name)
 {
 	std::cout << "Zombie " << _name << " created!\n";
 }
@@ -29,7 +29,7 @@ void Zombie::announce()
 	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
 }
 
-void Zombie::setName(std::string name)
+void Zombie::setName(const std::string& name)
 {
 	_name = name;
 }

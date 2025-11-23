@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input.cpp                                          :+:      :+:    :+:   */
+/*   prompt.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:25 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/14 11:30:28 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/23 11:27:28 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-bool promptInfo(const std::string description, std::string &input)
+bool promptInfo(const std::string description, std::string& input)
 {
 
 	std::cout << "Enter " << description << ": " << std::flush;
@@ -40,8 +40,8 @@ bool	promptIndex(int &index)
 	return true;
 }
 
-bool promptContactInfo(std::string &name, std::string &surname,
-	std::string &nickname, std::string &number, std::string &secret)
+bool promptContactInfo(std::string& name, std::string& surname,
+	std::string& nickname, std::string& number, std::string& secret)
 {
 	while (name.empty())
 		if (!promptInfo("first name", name))
@@ -61,7 +61,7 @@ bool promptContactInfo(std::string &name, std::string &surname,
 	return true;
 }
 
-bool promptOption(std::string &input)
+bool promptOption(std::string& input)
 {
 	while (input.empty())
 		if (!promptInfo("option", input))

@@ -1,18 +1,18 @@
-NAME		=	megaphone.out
+NAME	=	megaphone
 
-SRC			=	megaphone.cpp
-OBJ         =	$(patsubst %.cpp, %.o, $(SRC))
+SRC		=	megaphone.cpp
+OBJ     =	$(patsubst %.cpp, %.o, $(SRC))
 
-C++			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98
-RM			=	rm -rf
+C++		=	c++
+CFLAGS	=	-Wall -Werror -Wextra -g -std=c++98
+RM		=	rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "Linking executable..."
 	@$(C++) $(OBJ) -o $@
-	@echo "Megaphone built!"
+	@echo "$(NAME) built!"
 
 %.o: %.cpp
 	@echo "Compiling $@..."

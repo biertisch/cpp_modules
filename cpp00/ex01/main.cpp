@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/11 09:44:37 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/23 11:17:46 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,19 @@ bool findContact(PhoneBook &phonebook)
 	int	index;
 
 	if (!phonebook.displayAll())
-		return true;
-	if (!promptIndex(index))
+		return (true);
+		
+	while (1)
+	{
+		if (!promptIndex(index))
 			return false;
-	phonebook.displayContact(index);
+		if (phonebook.displayContact(index))
+			break;
+	}
 	return true;
 }
 
-bool saveNewContact(PhoneBook &phonebook)
+bool saveNewContact(PhoneBook& phonebook)
 {
 	std::string name;
 	std::string surname;
@@ -50,15 +55,15 @@ void displayOptions()
 	std::cout << std::setfill(' ') << std::setw(padding) << "" << title << '\n';
 	std::cout << std::setfill('*') << std::setw(width) << "" << '\n';
 
-	std::cout << "ADD: save new contact" << '\n';
-	std::cout << "SEARCH: display contact" << '\n';
-	std::cout << "EXIT: quit program" << "\n\n";
+	std::cout << "ADD: save new contact\n";
+	std::cout << "SEARCH: display contact\n";
+	std::cout << "EXIT: quit program\n\n";
 }
 
 int main()
 {
-	PhoneBook	phonebook;
-	std::string	input;
+	PhoneBook phonebook;
+	std::string input;
 
 	displayOptions();
 	while (1)
@@ -72,7 +77,7 @@ int main()
 		else if (input == "EXIT")
 			break;
 		else if (input != "ADD" && input != "SEARCH" && input != "EXIT")
-			std::cout << "Invalid option." << '\n';
+			std::cout << "Invalid option.\n";
 		std::cout << '\n';
 		input = "";
 	}

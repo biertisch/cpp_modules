@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:22 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 11:17:35 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/23 10:58:12 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,18 @@ class Contact
 
 	public:
 		Contact();
-		Contact(std::string name, std::string surname, std::string nickname,
-			std::string number, std::string secret);
+		Contact(const std::string& name,
+			const std::string& surname,
+			const std::string& nickname,
+			const std::string& number,
+			const std::string& secret);
 		~Contact();
-		std::string	getFirstName();
-		std::string	getLastName();
-		std::string	getNickname();
-		std::string	getPhoneNumber();
-		std::string	getDarkestSecret();
+
+		std::string	getFirstName() const;
+		std::string	getLastName() const;
+		std::string	getNickname() const;
+		std::string	getPhoneNumber() const;
+		std::string	getDarkestSecret() const;
 };
 
 #endif

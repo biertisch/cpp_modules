@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:37 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:02:37 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/23 11:18:18 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@ PhoneBook::PhoneBook() : _nextIndex(0), _validContacts(0) {}
 
 PhoneBook::~PhoneBook() {}
 
-void PhoneBook::addContact(Contact newContact)
+void PhoneBook::addContact(const Contact& newContact)
 {
 	_contacts[_nextIndex] = newContact;
-	_nextIndex = (_nextIndex + 1) % MA_xSIZE;
-	if (_validContacts < MA_xSIZE)
+	_nextIndex = (_nextIndex + 1) % MAX_SIZE;
+	if (_validContacts < MAX_SIZE)
 		_validContacts++;
 }
 
-std::string	PhoneBook::formatField(const std::string &str)
+std::string	PhoneBook::formatField(const std::string& str) const
 {
 	if (str.length() > 10)
 		return str.substr(0, 9) + ".";
 	return str;
 }
 
-bool PhoneBook::displayAll()
+bool PhoneBook::displayAll() const
 {
 	if (!_validContacts)
 	{
-		std::cout << "No contacts." << '\n';
+		std::cout << "No contacts.\n";
 		return false;
 	}
 
@@ -56,18 +56,20 @@ bool PhoneBook::displayAll()
 	return true;
 }
 
-bool PhoneBook::displayContact(int index)
+bool PhoneBook::displayContact(int index) const
 {
 	if (index < 1 || index > _validContacts)
 	{
 		std::cout << "Invalid index." << '\n';
 		return false;
 	}
+
 	std::cout << "\nCONTACT INFO\n";
 	std::cout << "First Name: " << _contacts[index - 1].getFirstName() << '\n';
 	std::cout << "Last Name: " << _contacts[index - 1].getLastName() << '\n';
 	std::cout << "Nickname: " << _contacts[index - 1].getNickname() << '\n';
 	std::cout << "Phone Number: " << _contacts[index - 1].getPhoneNumber() << '\n';
 	std::cout << "Darkest Secret: " << _contacts[index - 1].getDarkestSecret() << '\n';
+
 	return true;
 }

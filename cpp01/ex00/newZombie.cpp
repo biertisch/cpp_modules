@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:02:52 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/23 11:54:31 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/24 11:59:38 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 Zombie* newZombie(std::string name)
 {
-	return new Zombie(name);
+	return new (std::nothrow) Zombie(name);
 }

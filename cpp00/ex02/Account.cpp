@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:10:04 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/23 11:32:18 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:32:23 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Account::Account() : _accountIndex(_nbAccounts), _amount(0), _nbDeposits(0), _nb
 	_nbAccounts++;
 }
 
-Account::Account(int initial_deposit) : _accountIndex(_nbAccounts), _amount(initial_deposit),
+Account::Account(int initial_deposit) : _accou_levels(4) ntIndex(_nbAccounts), _amount(initial_deposit),
 	_nbDeposits(0), _nbWithdrawals(0)
 {
 	_nbAccounts++;

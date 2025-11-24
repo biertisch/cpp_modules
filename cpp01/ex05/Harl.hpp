@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:35:02 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/23 18:22:22 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:43:24 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include <iostream>
 #include <string>
 
-#define N 4
-
 class	Harl
 {
 	private:
@@ -25,7 +23,8 @@ class	Harl
 		void info();
 		void warning();
 		void error();
-		int getLevelIndex(const std::string& level);
+		
+		static int getLevelIndex(const std::string& level);
 
 	public:
 		Harl();

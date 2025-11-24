@@ -1,6 +1,6 @@
 NAME	=	replacer.out
 
-SRC		=	main.cpp file.cpp text.cpp
+SRC		=	main.cpp
 
 OBJ_DIR	=	obj/
 OBJ		=	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))

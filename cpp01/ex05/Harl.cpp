@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 17:37:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/23 18:26:22 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:45:07 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ void Harl::error()
 
 int Harl::getLevelIndex(const std::string& level)
 {
-	static std::string levels[N] = {
+	static std::string levels[4] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
 		"ERROR"
 	};
 
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < 4; i++)
 		if (level == levels[i])
 			return i;
 	return -1;
@@ -60,14 +60,14 @@ int Harl::getLevelIndex(const std::string& level)
 
 void Harl::complain(std::string level)
 {
-	static void (Harl::*functions[N])() = {
+	static void (Harl::*functions[4])() = {
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
 		&Harl::error
 	};
 
-	int i = Harl::getLevelIndex(level);
+	int i = getLevelIndex(level);
 	if (i != -1)
 		(this->*functions[i])();
 	else

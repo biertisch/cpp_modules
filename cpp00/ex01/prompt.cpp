@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prompt.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 15:34:25 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/23 12:01:21 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/24 13:44:26 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,19 @@ bool	promptIndex(int &index)
 bool promptContactInfo(std::string& name, std::string& surname,
 	std::string& nickname, std::string& number, std::string& secret)
 {
-	while (name.empty())
+	while (name.empty() || name.find_first_of('\t') != std::string::npos)
 		if (!promptInfo("first name", name))
 			return false;
-	while (surname.empty())
+	while (surname.empty() || name.find_first_of('\t') != std::string::npos)
 		if (!promptInfo("last name", surname))
 			return false;
-	while (nickname.empty())
+	while (nickname.empty() || name.find_first_of('\t') != std::string::npos)
 		if (!promptInfo("nickname", nickname))
 			return false;
-	while (number.empty())
+	while (number.empty() || name.find_first_of('\t') != std::string::npos)
 		if (!promptInfo("phone number", number))
 			return false;
-	while (secret.empty())
+	while (secret.empty() || name.find_first_of('\t') != std::string::npos)
 		if (!promptInfo("darkest secret", secret))
 			return false;
 	return true;

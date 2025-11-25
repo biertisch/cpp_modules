@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:46:36 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:01:55 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:26:00 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ void Fixed::setRawBits(int const raw)
 
 int Fixed::toInt() const
 {
-	return roundf(toFloat());
+	return _raw >> _fractionalBits;
 }
 
 float Fixed::toFloat() const
 {
-	return _raw / (float)(1 << _fractionalBits);
+	return static_cast<float>(_raw / (1 << _fractionalBits));
 }
 
 std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)

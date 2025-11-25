@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:46:36 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:01:55 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:32:36 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,12 @@ void Fixed::setRawBits(int const raw)
 
 int Fixed::toInt() const
 {
-	return roundf(toFloat());
+	return _raw >> _fractionalBits;
 }
 
 float Fixed::toFloat() const
 {
-	return _raw / (float)(1 << _fractionalBits);
-}
-
-std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
-{
-	stream << fixed.toFloat();
-	return stream;
+	return static_cast<float>(_raw / (1 << _fractionalBits));
 }
 
 bool Fixed::operator<(const Fixed& other) const
@@ -119,7 +113,11 @@ Fixed Fixed::operator*(const Fixed& other) const
 
 Fixed Fixed::operator/(const Fixed& other) const
 {
-	return Fixed(this->toFloat() / other.toFloat());
+	if (other.toFloat() != 0)
+		return Fixed(this->toFloat() / other.toFloat());
+
+	std::cerr << "Error: cannot divide by 0.\n";
+	return Fixed(0);
 }
 
 Fixed& Fixed::operator++()
@@ -175,4 +173,10 @@ Fixed&	Fixed::max(Fixed& first, Fixed& second)
 	if (first > second)
 		return first;
 	return second;
+}
+
+std::ostream& operator<<(std::ostream& stream, const Fixed& fixed)
+{
+	stream << fixed.toFloat();
+	return stream;
 }

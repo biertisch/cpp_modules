@@ -6,10 +6,11 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:51:16 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/25 18:42:24 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:54:45 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Point.hpp"
 
 static float crossProduct(const Point& point, const Point& vertex1, const Point& vertex2)
@@ -20,6 +21,12 @@ static float crossProduct(const Point& point, const Point& vertex1, const Point&
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
+	if (crossProduct(b, a, c) == 0)
+	{
+		std::cout << "This is not a valid triangle.\n";
+		return false;
+	}
+
 	float crossAB = crossProduct(point, a, b);
 	float crossBC = crossProduct(point, b, c);
 	float crossCA = crossProduct(point, c, a);

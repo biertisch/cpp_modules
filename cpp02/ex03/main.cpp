@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:39:12 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/25 19:17:36 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:57:29 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int main()
 	Point p3(2.0f, -2.0f);
 	std::cout << "Point (2.0, -2.0) is inside the triangle: " << bsp(a, b, c, p3) << "\n";
 
+	std::cout << "\n";
+
 	Point d(-2.0f, 0.5f);
 	Point e(-0.25f, 4.0f);
 	Point f(0.75f, -1.0f);
@@ -49,5 +51,14 @@ int main()
 	Point p7(0.0f, -0.6f);
 	std::cout << "Point (0.0, -0.6) is inside the triangle: " << bsp(d, e, f, p7) << "\n";
 
+	std::cout << "\n";
+
+	Point g(1.0f, 1.0f);
+	Point h(1.0f, 1.0f);
+	Point i(4.0f, 0.5f);
+	std::cout << "Triangle G=(1.0, 1.0) H=(1.0, 1.0) I=(4.0, 0.5)\n";
+
+	std::cout << "Point (2.5, -0.5) is inside the triangle: " << bsp(g, h, i, p1) << "\n";
+	
 	return 0;
 }

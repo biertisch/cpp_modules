@@ -6,18 +6,18 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:40:13 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:02:47 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:47:03 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point() : _x(Fixed(0)), _y(Fixed(0))
+Point::Point() : _x(0), _y(0)
 {
 	// std::cout << "Point default constructor called\n";
 }
 
-Point::Point(const float x, const float y) : _x(Fixed(x)), _y(Fixed(y))
+Point::Point(const float x, const float y) : _x(x), _y(y)
 {
 	// std::cout << "Point float constructor called\n";
 }

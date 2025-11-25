@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:39:12 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/25 14:46:25 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:17:36 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.hpp"
 #include "Point.hpp"
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);
@@ -25,7 +24,7 @@ int main()
 
 	Point p1(2.5f, -0.5f);
 	std::cout << std::boolalpha;
-	std::cout << "Point (2.0, 0.0) is inside the triangle: " << bsp(a, b, c, p1) << "\n";
+	std::cout << "Point (2.5, -0.5) is inside the triangle: " << bsp(a, b, c, p1) << "\n";
 
 	Point p2(3.5f, 1.5f);
 	std::cout << "Point (3.5, 1.5) is inside the triangle: " << bsp(a, b, c, p2) << "\n";
@@ -44,8 +43,11 @@ int main()
 	Point p5(0.5f, 0.25f);
 	std::cout << "Point (0.5, 0.25) is inside the triangle: " << bsp(d, e, f, p5) << "\n";
 
-	Point p6(0.0f, -0.6f);
-	std::cout << "Point (0.0, -0.25) is inside the triangle: " << bsp(d, e, f, p6) << "\n";
+	Point p6(0.0f, -0.59f);
+	std::cout << "Point (0.0, -0.59) is inside the triangle: " << bsp(d, e, f, p6) << "\n";
+
+	Point p7(0.0f, -0.6f);
+	std::cout << "Point (0.0, -0.6) is inside the triangle: " << bsp(d, e, f, p7) << "\n";
 
 	return 0;
 }

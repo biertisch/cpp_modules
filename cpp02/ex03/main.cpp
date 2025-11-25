@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:39:12 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/20 16:41:06 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:46:25 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsp.hpp"
+#include <iostream>
+#include "Fixed.hpp"
+#include "Point.hpp"
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 int main()
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:29:51 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:01:55 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/25 10:32:05 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@
 class Fixed
 {
 	private:
-		int					_raw;
-		static const int	_fractionalBits = 8;
+		static const int _fractionalBits = 8;
+		int _raw;
 
 	public:
 		Fixed();
 		Fixed(const Fixed& other);
 		Fixed&	operator=(const Fixed& other);
 		~Fixed();
-		int		getRawBits() const;
-		void	setRawBits(int const raw);
+		
+		int getRawBits() const;
+		void setRawBits(int const raw);
 };
 
 #endif

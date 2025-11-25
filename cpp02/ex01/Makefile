@@ -1,16 +1,16 @@
-NAME		=	fixed.out
+NAME	=	fixed.out
 
-SRC			=	main.cpp Fixed.cpp
+SRC		=	main.cpp Fixed.cpp
 
-OBJ_DIR		=	obj/
-OBJ         =	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
-DEP			=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
+OBJ_DIR	=	obj/
+OBJ		=	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRC))
+DEP		=	$(patsubst %.cpp, $(OBJ_DIR)%.d, $(SRC))
 
-C++			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -g -std=c++98 -MMD -MP
-RM			=	rm -rf
+C++		=	c++
+CFLAGS	=	-Wall -Werror -Wextra -g -std=c++98 -MMD -MP
+RM		=	rm -rf
 
-OUTFILE		= 	output.txt
+OUTFILE	= 	output.txt
 
 all: $(NAME)
 

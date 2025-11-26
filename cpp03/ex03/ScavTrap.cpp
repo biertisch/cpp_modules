@@ -3,33 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:28:38 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/23 14:03:59 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 12:09:52 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-void ScavTrap::initStats()
-{
-	setMaxHP(100);
-	setHP(100);
-	setEnergy(50);
-	setDamage(20);
-}
-
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap("default", 100, 100, 50, 20)
 {
 	std::cout << "ScavTrap default constructor called\n";
-	initStats();
 }
 
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
+ScavTrap::ScavTrap(const std::string& name)	: ClapTrap(name, 100, 100, 50, 20)
 {
 	std::cout << "ScavTrap parametrized constructor called\n";
-	initStats();
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
@@ -52,24 +42,24 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (getHP() <= 0)
+	if (_hp <= 0)
 	{
-		std::cout << "Dear old ScavTrap " << getName() << " lies innocuously dead, causing no harm.\n";
+		std::cout << "Dear old ScavTrap " << _name << " lies innocuously dead, causing no harm.\n";
 		return;
 	}
 
-	if (getEnergy() == 0)
+	if (_energy <= 0)
 	{
-		std::cout << "Though ferocious, ScavTrap " << getName() << " is too exhausted to attack.\n";
+		std::cout << "Though ferocious, ScavTrap " << _name << " is too exhausted to attack.\n";
 		return;
 	}
 
-	setEnergy(getEnergy() - 1);
-	std::cout << "ScavTrap " << getName() << " valiantly attacks " << target << ", causing " << getDamage() << " damage points!\n";
+	_energy--;
+	std::cout << "ScavTrap " << _name << " valiantly attacks " << target << ", causing " << _damage << " damage points!\n";
 	printCurrentStats();
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << getName() << " is now in gate keeper mode.\n";
+	std::cout << "ScavTrap " << _name << " is now in gate keeper mode.\n";
 }

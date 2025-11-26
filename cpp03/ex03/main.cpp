@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:57:47 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 19:33:11 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 12:00:00 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int main()
 	DiamondTrap newestFrankie;
 	newestFrankie = newFrankie;
 	newestFrankie.attack("their parents");
+	newestFrankie.guardGate();
+	newestFrankie.highFivesGuys();
 	newestFrankie.whoAmI();
 }

@@ -6,22 +6,19 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:19:53 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/10/22 18:32:14 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:24:12 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
+#include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
-	private:
-		void initStats();
-
 	public:
 		ScavTrap();
 		ScavTrap(const std::string& name);

@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:57:06 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/26 13:03:14 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 13:07:11 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	main()
 	// Wrong classes examples
 	const WrongAnimal* wrongMeta = new (std::nothrow) WrongAnimal();
 	const WrongAnimal* wrongCat = new (std::nothrow) WrongCat();
-	if (!wrongMeta || !wrongCat)
+	const WrongCat* wrongCat2 = new (std::nothrow) WrongCat();
+	if (!wrongMeta || !wrongCat || !wrongCat2)
 	{
 		std::cerr << "Memory allocation failed.\n";
 		return 1;
@@ -50,9 +51,11 @@ int	main()
 
 	wrongMeta->makeSound();
 	wrongCat->makeSound();
+	wrongCat2->makeSound();
 
 	delete wrongMeta;
 	delete wrongCat;
+	delete wrongCat2;
 
 	return 0;
 }

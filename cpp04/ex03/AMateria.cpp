@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:27:26 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:38:48 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 14:45:21 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ AMateria& AMateria::operator=(const AMateria& other)
 {
 	// std::cout << "AMateria assignment operator called.\n";
 	(void)other;
-	return (*this);
+	return *this;
 }
 
 AMateria::~AMateria()
@@ -39,9 +39,9 @@ AMateria::~AMateria()
 	// std::cout << "AMateria destructor called.\n";
 }
 
-const std::string& AMateria::getType() const
+const std::string AMateria::getType() const
 {
-	return (_type);
+	return _type;
 }
 
 void AMateria::use(ICharacter& target)

@@ -6,22 +6,20 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:46:20 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:05:25 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:17:27 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("Dog"), _brain(new (std::nothrow) Brain("Dog"))
 {
 	std::cout << "Dog default constructor called\n";
-	_brain = new Brain("Dog");
 }
 
-Dog::Dog(const Dog& other): Animal(other)
+Dog::Dog(const Dog& other): Animal(other), _brain(new (std::nothrow) Brain("Dog"))
 {
 	std::cout << "Dog copy constructor called\n";
-	_brain = new Brain("Dog");
 }
 
 Dog& Dog::operator=(const Dog& other)
@@ -30,9 +28,11 @@ Dog& Dog::operator=(const Dog& other)
 	if (this != &other)
 	{
 		_type = other._type;
-		_brain = new Brain("Dog");
+		_brain = new (std::nothrow) Brain("Dog");
+		if (!_brain)
+			std::cerr << "Memory allocation failed.\n";
 	}
-	return (*this);
+	return *this;
 }
 
 Dog::~Dog()
@@ -48,10 +48,13 @@ void Dog::makeSound() const
 
 std::string Dog::getIdea(int index) const
 {
-	return (_brain->getIdea(index));
+	if (!_brain)
+		return "";
+	return _brain->getIdea(index);
 }
 
 void Dog::setIdea(int index, const std::string& idea)
 {
-	_brain->setIdea(index, idea);
+	if (_brain)
+		_brain->setIdea(index, idea);
 }

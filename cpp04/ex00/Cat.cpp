@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:17:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 11:59:58 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:09:18 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Cat& Cat::operator=(const Cat& other)
 	std::cout << "Cat assignment operator called\n";
 	if (this != &other)
 		_type = other._type;
-	return (*this);
+	return *this;
 }
 
 Cat::~Cat()

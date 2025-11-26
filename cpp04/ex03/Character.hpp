@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:57:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:06:40 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 14:57:42 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Character : public ICharacter
 		void initSpells(AMateria** array, int size);
 		void copyInventory(const Character& other);
 		void removeSpells(AMateria** array, int size);
-		bool validateIndex(int index);
+		bool validateIndex(int index) const;
 
 	public:
 		Character();

@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:03:06 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 11:59:58 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:20:16 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ AAnimal& AAnimal::operator=(const AAnimal& other)
 
 	if (this != &other)
 		_type = other._type;
-	return (*this);
+	return *this;
 }
 
 AAnimal::~AAnimal()
@@ -41,12 +41,7 @@ AAnimal::~AAnimal()
 	std::cout << "AAnimal destructor called\n";
 }
 
-void AAnimal::makeSound() const
-{
-	std::cout << "Generic abstract animal sound\n";
-}
-
 std::string AAnimal::getType() const
 {
-	return (_type);
+	return _type;
 }

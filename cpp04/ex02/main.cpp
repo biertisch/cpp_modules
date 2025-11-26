@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:57:06 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/11 12:24:05 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 14:31:59 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,15 @@
 
 int	main()
 {
-	Animal *animal = new Animal();
-	Animal *dog = new Dog();
-	// AAnimal *abstractAnimal = new AAnimal();
-	AAnimal *cat = new Cat();
+	Animal *animal = new (std::nothrow) Animal();
+	Animal *dog = new (std::nothrow) Dog();
+	// AAnimal *abstractAnimal = new (std::nothrow) AAnimal();
+	AAnimal *cat = new (std::nothrow) Cat();
+	if (!animal || !dog || !cat)
+	{
+		std::cerr << "Memory allocation failed.\n";
+		return 1;
+	}
 
 	animal->makeSound();
 	dog->makeSound();
@@ -32,6 +37,6 @@ int	main()
 	delete dog;
 	// delete abstractAnimal;
 	delete cat;
-	
+
 	return 0;
 }

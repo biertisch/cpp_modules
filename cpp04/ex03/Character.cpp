@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:02:30 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 19:12:01 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:22:10 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Character& Character::operator=(const Character& other)
 		copyInventory(other);
 		initSpells(_unequiped, 100);
 	}
-	return (*this);
+	return *this;
 }
 
 Character::~Character()
@@ -149,7 +149,7 @@ void Character::use(int idx, ICharacter& target)
 	_inventory[idx] = NULL;
 }
 
-bool Character::validateIndex(int index)
+bool Character::validateIndex(int index) const
 {
 	if (index < 0 || index > 3)
 	{

@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:41:03 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:38:19 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 14:46:03 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Ice& Ice::operator=(const Ice& other)
 {
 	// std::cout << "Ice assignment operator called.\n";
 	(void)other;
-	return (*this);
+	return *this;
 }
 
 Ice::~Ice()
@@ -37,7 +37,7 @@ Ice::~Ice()
 Ice* Ice::clone() const
 {
 	std::cout << "Ice clone created.\n";
-	return (new Ice(*this));
+	return new (std::nothrow) Ice(*this);
 }
 
 void Ice::use(ICharacter& target)

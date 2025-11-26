@@ -6,7 +6,7 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:03:06 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 11:59:58 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:10:39 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 
 	if (this != &other)
 		_type = other._type;
-	return (*this);
+	return *this;
 }
 
 WrongAnimal::~WrongAnimal()
@@ -48,5 +48,5 @@ void WrongAnimal::makeSound() const
 
 std::string WrongAnimal::getType() const
 {
-	return (_type);
+	return _type;
 }

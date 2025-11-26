@@ -6,22 +6,20 @@
 /*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:17:27 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/15 12:05:25 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:17:35 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : Animal("Cat"), _brain(new (std::nothrow) Brain("Cat"))
 {
 	std::cout << "Cat default constructor called\n";
-	_brain = new Brain("Cat");
 }
 
-Cat::Cat(const Cat& other) : Animal(other)
+Cat::Cat(const Cat& other) : Animal(other), _brain(new (std::nothrow) Brain(*other._brain))
 {
 	std::cout << "Cat copy constructor called\n";
-	_brain = new Brain(*other._brain);
 }
 
 Cat& Cat::operator=(const Cat& other)
@@ -31,9 +29,11 @@ Cat& Cat::operator=(const Cat& other)
 	{
 		_type = other._type;
 		delete _brain;
-		_brain = new Brain(*other._brain);
+		_brain = new (std::nothrow) Brain(*other._brain);
+		if (!_brain)
+			std::cerr << "Memory allocation failed.\n";
 	}
-	return (*this);
+	return *this;
 }
 
 Cat::~Cat()
@@ -49,10 +49,13 @@ void Cat::makeSound() const
 
 std::string Cat::getIdea(int index) const
 {
-	return (_brain->getIdea(index));
+	if (!_brain)
+		return "";
+	return _brain->getIdea(index);
 }
 
 void Cat::setIdea(int index, const std::string& idea)
 {
-	_brain->setIdea(index, idea);
+	if (_brain)
+		_brain->setIdea(index, idea);
 }

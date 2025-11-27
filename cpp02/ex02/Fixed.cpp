@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:46:36 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/25 19:32:03 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/27 14:34:50 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int Fixed::toInt() const
 
 float Fixed::toFloat() const
 {
-	return static_cast<float>(_raw / (1 << _fractionalBits));
+	return static_cast<float>(_raw) / (1 << _fractionalBits);
 }
 
 bool Fixed::operator<(const Fixed& other) const

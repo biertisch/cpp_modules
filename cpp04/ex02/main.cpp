@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:57:06 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/26 14:31:59 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:39:44 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ int	main()
 		return 1;
 	}
 
+	std::cout << '\n';
 	animal->makeSound();
 	dog->makeSound();
 	// abstractAnimal->makeSound();
 	cat->makeSound();
 
+	std::cout << '\n';
 	delete animal;
 	delete dog;
 	// delete abstractAnimal;

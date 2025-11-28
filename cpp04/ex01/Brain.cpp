@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:23:47 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/26 15:13:14 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:24:49 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Brain::Brain()
 	std::cout << "Brain default constructor called\n";
 
 	for (int i = 0; i < 100; i++)
-		_ideas[i] = "default idea";
+		_ideas[i] = "eating";
 }
 
 Brain::Brain(const std::string& type)

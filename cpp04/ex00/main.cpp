@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:57:06 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/26 13:07:11 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:16:54 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,23 @@ int	main()
 		return 1;
 	}
 
+	std::cout << '\n';
 	std::cout << meta->getType() << " " << std::endl;
 	std::cout << cat->getType() << " " << std::endl;
 	std::cout << dog->getType() << " " << std::endl;
+
+	std::cout << '\n';
 	cat->makeSound();
 	dog->makeSound();
 	meta->makeSound();
 
+	std::cout << '\n';
 	delete meta;
 	delete cat;
 	delete dog;
 
 	// Wrong classes examples
+	std::cout << '\n';
 	const WrongAnimal* wrongMeta = new (std::nothrow) WrongAnimal();
 	const WrongAnimal* wrongCat = new (std::nothrow) WrongCat();
 	const WrongCat* wrongCat2 = new (std::nothrow) WrongCat();
@@ -49,10 +54,12 @@ int	main()
 		return 1;
 	}
 
+	std::cout << '\n';
 	wrongMeta->makeSound();
 	wrongCat->makeSound();
 	wrongCat2->makeSound();
 
+	std::cout << '\n';
 	delete wrongMeta;
 	delete wrongCat;
 	delete wrongCat2;

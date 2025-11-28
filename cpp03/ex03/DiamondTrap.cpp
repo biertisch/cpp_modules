@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:54:40 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/26 11:42:13 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:13:04 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ DiamondTrap::DiamondTrap()
 }
 
 DiamondTrap::DiamondTrap(const std::string& name)
-	: ClapTrap(name + "_clap_name", 100, 100, 50, 30), ScavTrap(name), FragTrap(name), _name(name)
+	: ClapTrap(name + "_clap_name", 100, 100, 50, 30), ScavTrap(), FragTrap(), _name(name)
 {
 	std::cout << "DiamondTrap parametrized constructor called\n";
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
-	: ClapTrap(other), ScavTrap(other), FragTrap(other), _name(other._name)
+	: ClapTrap(other._name + "_clap_name", other._maxHP, other._hp, other._energy, other._damage),
+	ScavTrap(), FragTrap(), _name(other._name)
 {
 	std::cout << "DiamondTrap copy constructor called\n";
 }

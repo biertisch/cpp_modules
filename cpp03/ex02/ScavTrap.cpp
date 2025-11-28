@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:28:38 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/26 12:08:35 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/11/28 11:57:01 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ ScavTrap::ScavTrap(const std::string& name)	: ClapTrap(name, 100, 100, 50, 20)
 	std::cout << "ScavTrap parametrized constructor called\n";
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap& other)
+	: ClapTrap(other._name, other._maxHP, other._hp, other._energy, other._damage)
 {
 	std::cout << "ScavTrap copy constructor called\n";
 }

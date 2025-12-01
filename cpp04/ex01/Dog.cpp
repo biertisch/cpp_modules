@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beatde-a <beatde-a@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: beatde-a <beatde-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:46:20 by beatde-a          #+#    #+#             */
-/*   Updated: 2025/11/26 15:17:27 by beatde-a         ###   ########.fr       */
+/*   Updated: 2025/12/01 17:00:35 by beatde-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Dog& Dog::operator=(const Dog& other)
 	if (this != &other)
 	{
 		_type = other._type;
+		delete _brain;
 		_brain = new (std::nothrow) Brain("Dog");
 		if (!_brain)
 			std::cerr << "Memory allocation failed.\n";
